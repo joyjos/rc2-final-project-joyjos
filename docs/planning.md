@@ -24,4 +24,4 @@ El Admin es el que lleva la administración de la aplicación.
 
 ## Links
 [User Journey](https://www.figma.com/file/IRJmv6JvT969WbSex1W6ql/JOY-SWEETS?type=design&node-id=11-2&mode=design&t=GIRV6JUaN3Bu0pCS-0)  
-[Design](https://www.figma.com/file/IRJmv6JvT969WbSex1W6ql/JOY-SWEETS?type=design&node-id=0-1&mode=design&t=GIRV6JUaN3Bu0pCS-0)
+[Design](https://www.figma.com/file/IRJmv6JvT969WbSex1W6ql/JOY-SWEETS?type=design&node-id=0-1&mode=design&t=7SDvauDDM6cE6aDj-0)
