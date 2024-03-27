@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Arvo";
+  src:
+    local("Arvo"),
+    url("Arvo-Bold.ttf") format("opentype") tech(color-COLRv1),
+    url("Arvo-BoldItalic.ttf") format("opentype"),
+    url("Arvo-Italic.ttf") format("opentype"),
+    url("Arvo-Regular.ttf") format("opentype");
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +21,20 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  font-size: 62.5%;
+
+  --blue: #197AAA;
+  --lightblue: #4C99C0;
+  --chocolate: #3D1901;
+  --light: #FFC803;
+  --special: #F7AFBE;
 }
 
 a {
