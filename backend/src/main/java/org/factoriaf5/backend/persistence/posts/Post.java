@@ -29,7 +29,7 @@ public class Post {
     @NonNull private String title;
     @Column(columnDefinition="TEXT")
     @NonNull private String post;
-    @Column(length=70)
+    @Column(length=100)
     @NonNull private String image;
     @Column(length=45)
     @NonNull private String category;
