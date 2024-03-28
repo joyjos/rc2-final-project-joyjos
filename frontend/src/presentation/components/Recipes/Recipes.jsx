@@ -1,6 +1,8 @@
 import { useContext } from "react";
+import { Link } from 'react-router-dom';
+import { PostContext } from '../../../middleware/context/PostContext';
 
-export const Recipe = () => {
+export const Recipes = () => {
   const { posts } = useContext(PostContext);
   return (
     <section className="ae-container-fluid rk-main">

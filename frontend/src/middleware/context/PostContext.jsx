@@ -23,3 +23,5 @@ export const PostProvider = ({ children }) => {
         </PostContext.Provider>
       );
     };
+
+    export { PostContext };
