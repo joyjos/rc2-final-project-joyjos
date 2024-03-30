@@ -1,0 +1,240 @@
+/* Animación */
+
+.animated {
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@media (print),
+(prefers-reduced-motion: reduce) {
+    .animated {
+        -webkit-animation-duration: 1ms !important;
+        animation-duration: 1ms !important;
+        -webkit-transition-duration: 1ms !important;
+        transition-duration: 1ms !important;
+        -webkit-animation-iteration-count: 1 !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+
+/* Cursor */
+
+.pointer {
+    cursor: pointer;
+}
+
+
+/* Tamaño de la imagen de la receta */
+
+.img-50 {
+    width: 50px;
+    height: 50px;
+}
+
+.img-200 {
+    height: 200px;
+}
+
+
+/* Input */
+
+.joy {
+    padding: .5rem .75rem !important;
+    border: 1px solid rgba(0, 0, 0, .15) !important;
+    border-radius: .25rem;
+    margin: 0 !important;
+}
+
+
+/* Enlaces */
+
+.rk-menu__link {
+    color: #A3CBDE;
+}
+
+.rk-menu__link:hover {
+    color: #197AAA
+}
+
+.rk-menu__link:focus {
+    color: #197AAA;
+}
+
+a:hover {
+    color: #197AAA;
+}
+
+
+/* Footer */
+
+.rk-footer__text {
+    color: #197AAA
+}
+
+@media (max-width: 40em) {
+    .rk-footer-menu {
+        display: block !important;
+    }
+    .rk-menu__item {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+
+/* CKEditor */
+
+.ck-editor__editable_inline {
+    min-height: 400px;
+    max-height: 400px;
+}
+
+.text-big {
+    font-size: 1.5rem;
+}
+
+
+/* Texto seleccionado */
+
+*::selection {
+    background-color: #F7AFBE;
+    color: #fff;
+}
+
+*::-moz-selection {
+    background-color: #F7AFBE;
+    color: #fff;
+}
+
+
+/* Panel de Cookies */
+
+.cc-revoke,
+.cc-window {
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+}
+
+.cc-color-override--1986190269 .cc-link,
+.cc-color-override--1986190269 .cc-link:active,
+.cc-color-override--1986190269 .cc-link:visited {
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.cc-color-override--1986190269 .cc-btn:hover,
+.cc-color-override--1986190269 .cc-btn:focus {
+    background-color: #F7AFBE !important;
+    border-color: #F8DCE0 !important;
+}
+
+.cc-color-override--1101889584 .cc-btn {
+    border-color: #F8DCE0 !important;
+}
+
+.cc-color-override--1986190269.cc-window {
+    color: #4F5960 !important;
+}
+
+
+/* Paginación */
+
+ul.ngx-pagination {
+    padding-left: 0 !important;
+}
+
+.ngx-pagination {
+    margin-bottom: 0 !important;
+}
+
+.ngx-pagination .current {
+    background: #F7AFBE !important;
+    border-radius: 10%;
+}
+
+.espacio {
+    margin-top: -50px;
+}
+
+
+/* Perfil */
+
+.form-control:disabled,
+.form-control[readonly] {
+    background-color: #EFF7FA;
+}
+
+.azul {
+    color: #4C99C0;
+}
+
+/* Home - Logo */
+.rk-logo {
+    margin-top: -3rem;
+    margin-left: 1.45rem;
+    margin-bottom: 3rem;
+}
+
+
+/* Home - Menú de navegación */
+
+@media (min-width: 64em) {
+    .rk-navigation {
+        padding-right: 130px;
+    }
+}
+
+.menor {
+    font-size: 12px;
+}
+
+.justify {
+    text-align: justify;
+}
+
+@media (max-width: 40em) {
+    /* Sobre mí y Contacto */
+    .ae-grid {
+        margin-left: 1.5rem !important;
+        margin-right: 1.5rem !important;
+    }
+    /* Admin */
+    .login-box {
+        width: 330px !important;
+    }
+    .form-group {
+        margin-bottom: 5px !important;
+    }
+}
+
+@media (max-width: 1100px) {
+    .margen {
+        margin-bottom: 10px;
+    }
+}

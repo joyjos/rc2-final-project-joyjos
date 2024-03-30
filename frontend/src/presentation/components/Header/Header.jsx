@@ -33,11 +33,11 @@ export const Header = () => {
       </label>
       <div className="ae-container-fluid rk-topbar">
         <h1 className="rk-logo">
-          <Link to="/home">
+          <Link to="/">
             <img
               src={logo}
-              width="175"
-              height="175"
+              width="123"
+              height="123"
               alt="JOYSWEETS"
             />
           </Link>

@@ -11,7 +11,7 @@ export const Recipes = () => {
           {posts.map((post) => (
             <Link
               key={post.id}
-              to={`/receta/${post.id}`}
+              to={`/post/${post.id}`}
               className="rk-item ae-masonry__item"
             >
               <img src={post.image} alt={post.title} />
