@@ -1,0 +1,40 @@
+h5 {
+    color: #4C99C0;
+}
+
+.bgTitle,
+.bgCategory {
+    opacity: 0.8;
+    border-radius: 5px;
+}
+
+.bgTitle {
+    padding: 0 10px;
+    background: #FFA6C0;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: all 0.4s ease 0.6s;
+    -o-transition: all 0.4s ease 0.6s;
+    transition: all 0.4s ease 0.6s;
+    color: var(--white);
+}
+
+.bgCategory {
+    position: relative;
+    padding: 5px 10px;
+    background: #FFDDE8;
+    -webkit-transform: rotate(-6deg);
+    -ms-transform: rotate(-6deg);
+    transform: rotate(-6deg);
+    left: 120px;
+    -webkit-transition: all 0.4s ease 0.8s;
+    -o-transition: all 0.4s ease 0.8s;
+    transition: all 0.4s ease 0.8s;
+}
+
+@media (max-width: 40em) {
+    .bgCategory {
+        left: 0;
+    }
+}

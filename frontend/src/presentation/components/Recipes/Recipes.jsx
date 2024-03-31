@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { PostContext } from '../../../middleware/context/PostContext';
 
 export const Recipes = () => {
+
   const { posts } = useContext(PostContext);
+  
   return (
     <section className="ae-container-fluid rk-main">
       <section className="ae-container-fluid ae-container-fluid--inner rk-portfolio">

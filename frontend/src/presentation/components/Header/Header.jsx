@@ -1,7 +1,7 @@
 import "./Header.css";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from '../../assets/img/JOYSWEETS.svg';
+import logo from "../../assets/img/JOYSWEETS.svg";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,49 +34,48 @@ export const Header = () => {
       <div className="ae-container-fluid rk-topbar">
         <h1 className="rk-logo">
           <Link to="/">
-            <img
-              src={logo}
-              width="123"
-              height="123"
-              alt="JOYSWEETS"
-            />
+            <img src={logo} width="123" height="123" alt="JOYSWEETS" />
           </Link>
         </h1>
         <nav className="rk-navigation">
           <ul className="rk-menu">
-            <li
-              className={`rk-menu__item ${
-                location.pathname === "/home" ? "active" : ""
-              }`}
-            >
-              <Link to="/home" className="rk-menu__link">
+            <li className="rk-menu__item">
+              <Link
+                to="/"
+                className={`rk-menu__link ${
+                  location.pathname === "/" ? "active" : ""
+                }`}
+              >
                 Home
               </Link>
             </li>
-            <li
-              className={`rk-menu__item ${
-                location.pathname === "/about" ? "active" : ""
-              }`}
-            >
-              <Link to="/about" className="rk-menu__link">
+            <li className="rk-menu__item">
+              <Link
+                to="/about"
+                className={`rk-menu__link ${
+                  location.pathname.startsWith("/about") ? "active" : ""
+                }`}
+              >
                 Sobre mí
               </Link>
             </li>
-            <li
-              className={`rk-menu__item ${
-                location.pathname === "/blog" ? "active" : ""
-              }`}
-            >
-              <Link to="/blog" className="rk-menu__link">
+            <li className="rk-menu__item">
+              <Link
+                to="/blog"
+                className={`rk-menu__link ${
+                  location.pathname.startsWith("/blog") ? "active" : ""
+                }`}
+              >
                 Blog
               </Link>
             </li>
-            <li
-              className={`rk-menu__item ${
-                location.pathname === "/contacto" ? "active" : ""
-              }`}
-            >
-              <Link to="/contacto" className="rk-menu__link">
+            <li className="rk-menu__item">
+              <Link
+                to="/contacto"
+                className={`rk-menu__link ${
+                  location.pathname.startsWith("/contacto") ? "active" : ""
+                }`}
+              >
                 Contacto
               </Link>
             </li>
