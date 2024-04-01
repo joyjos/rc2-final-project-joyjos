@@ -67,15 +67,15 @@
 /* Enlaces */
 
 .rk-menu__link {
-  color: #a3cbde;
+  color: var(--chocolate);
 }
 
 .rk-menu__link:hover {
-  color: var(--blue);
+  color: var(--special);
 }
 
 .rk-menu__link:focus {
-  color: var(--blue);
+  color: var(--special);
 }
 
 a:hover {
