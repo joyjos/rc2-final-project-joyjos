@@ -2,6 +2,7 @@ import "./Header.css";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/img/JOYSWEETS.svg";
+import { RiUserSmileFill } from "react-icons/ri";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="ae-container-fluid ae-container-fluid--full rk-header">
+    <header className="ae-container-fluid ae-container-fluid--full rk-header animated fadeIn">
       <input
         type="checkbox"
         id="mobile-menu"
@@ -77,6 +78,16 @@ export const Header = () => {
                 }`}
               >
                 Contacto
+              </Link>
+            </li>
+            <li className="rk-menu__item">
+              <Link
+                to="/admin"
+                className={`rk-menu__link ${
+                  location.pathname.startsWith("/admin") ? "active" : ""
+                }`}
+              >
+                <RiUserSmileFill style={{ fontSize: "24px" }} />
               </Link>
             </li>
           </ul>

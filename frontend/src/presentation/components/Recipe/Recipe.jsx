@@ -46,7 +46,7 @@ export const Recipe = () => {
     { selectedPost && (
       <div className="ae-container-fluid ae-container-fluid--inner rk-portfolio--inner">
       <div className="ae-grid ae-grid--collapse au-xs-ptp-1 au-xs-pbp-1">
-        <div className="ae-grid__item--alt item-lg-12">
+        <div className="ae-grid__item--alt item-lg-12 justify">
           <div dangerouslySetInnerHTML={{ __html: selectedPost.post }} />
         </div>
       </div>

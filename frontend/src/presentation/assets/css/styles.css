@@ -10,8 +10,11 @@
   --blue: #197aaa;
   --lightblue: #4c99c0;
   --chocolate: #3d1901;
+  --light-chocolate: #a56f49;
   --light: #ffc803;
   --special: #f7afbe;
+  --light-special:#f5e2e6;
+  --input:#f9f2f4;
   --white: #fff;
 }
 
@@ -58,6 +61,28 @@
   animation-name: fadeIn;
 }
 
+/* Imágenes */
+
+.img-50 {
+  width: 50px;
+  height: 50px;
+}
+
+.img-200 {
+  height: 200px;
+  border-radius: var(--bs-border-radius);
+}
+
+/* Input */
+
+.joy {
+  padding: .5rem .75rem !important;
+  border: 1px solid rgba(0, 0, 0, .15) !important;
+  border-radius: .25rem;
+  margin: 0 !important;
+  background-color: var(--input) !important;
+}
+
 /* Cursor */
 
 .pointer {
@@ -78,8 +103,24 @@
   color: var(--special);
 }
 
+a {
+  color: var(--chocolate) !important;
+}
+
 a:hover {
+  color:var(--special) !important;
+}
+
+.aside a:hover {
   color: var(--special);
+}
+
+.admin a {
+  color:var(--light-chocolate)
+}
+
+.admin a:hover {
+  color:var(--chocolate)
 }
 
 /* Texto seleccionado */
@@ -119,6 +160,11 @@ a:hover {
   width: 100%;
 }
 
+.rk-menu__link:last-child:hover::after,
+.rk-menu__link:last-child:active::after {
+  width: 0;
+}
+
 @media (min-width: 64em) {
   .rk-navigation {
     margin-right: 81px;
@@ -153,4 +199,16 @@ a:hover {
   .margen {
     margin-bottom: 10px;
   }
+}
+
+/* Botones */
+
+.btn-primary, .btn-danger {
+  background-color: var(--special) !important;
+  border: none !important;
+}
+
+/* Card */
+.card {
+  border: none;
 }

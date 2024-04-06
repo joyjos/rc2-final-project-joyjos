@@ -1,0 +1,24 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.dashboard h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.dashboard button {
+    width:23rem;
+    height: 3rem;
+    background-color: var(--chocolate);
+    color: var(--special);
+    border: none;
+    margin: 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 0.3rem;
+    text-transform: uppercase;
+}

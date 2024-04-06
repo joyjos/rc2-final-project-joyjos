@@ -1,0 +1,24 @@
+.admin {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    gap:5rem;
+    background-color: var(--special);
+    height: 4rem;
+    padding-right: 2rem;
+}
+
+.logo-admin {
+    margin-left: 1.7rem;
+    margin-top: 3.5rem;
+}
+
+.admin .logout {
+    display: flex;
+    align-items: center;
+    gap:3rem;
+}
+
+.admin .logout span {
+    font-size: 1.2rem;
+}

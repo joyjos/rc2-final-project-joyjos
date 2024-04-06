@@ -1,0 +1,33 @@
+aside {
+    background-color: var(--chocolate);
+    width: 10rem;
+    height: 100vh;
+    color: var(--special);
+    float: left;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.aside h3 {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    color:var(--light-special);
+}
+
+.aside a {
+    color:var(--light-special);
+}
+
+.aside a:hover {
+    color:var(--special);
+}
+
+.aside .icon {
+    margin-top: 2rem;
+}

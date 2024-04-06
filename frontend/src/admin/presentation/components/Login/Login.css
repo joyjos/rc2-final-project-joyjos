@@ -1,0 +1,111 @@
+.admin-login {
+  max-width: 444px;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.admin-container {
+  display: flex;
+  margin-top: 64px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.admin-container img {
+  margin-bottom: 1rem;
+}
+
+.admin-container h1 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.admin-container form {
+  width: 100%;
+}
+
+.p-field {
+  padding: 18.5px 14px;
+  margin-bottom: 1rem;
+}
+
+.p-inputtext:enabled:focus {
+  box-shadow: 0 0 0 0.1rem var(--special);
+}
+
+.p-float-label {
+  margin-bottom: 1.5rem;
+}
+
+.p-inputtext {
+  width: 100%;
+  padding: 0.8rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid var(--light-special);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.p-password {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--light-special);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+input[type=password] {
+  padding: 0;
+  background-color: transparent;
+}
+
+/* .p-inputtext:enabled:focus {
+  box-shadow: none;
+} */
+
+.p-field-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.p-checkbox {
+  margin-right: 1rem;
+}
+
+.p-button {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: var(--chocolate);
+  color: var(--white);
+  border: 1px solid var(--light-special) !important;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.p-button:hover {
+  background-color: var(--special);
+  color: var(--white);
+}
+
+.remember-container {
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-admin {
+  margin: 3rem;
+  text-align: center;
+}
+
+.p-checkbox.p-highlight .p-checkbox-box {
+  border-color: var(--special);
+  background: var(--special);
+}
