@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { PostContext } from "../../../../middleware/context/PostContext";
 import { Link } from "react-router-dom";
 import { truncate } from "../../../../helpers/utils";
-import { Seacher } from "../../../../presentation/components/Seacher/Seacher";
+
 
 export const Posts = () => {
   const { posts } = useContext(PostContext);
@@ -17,7 +17,7 @@ export const Posts = () => {
         <div className="col-12">
           <div className="card">
             <div className="card-body">
-              <Seacher />
+              
             </div>
           </div>
         </div>

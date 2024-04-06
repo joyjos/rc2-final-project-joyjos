@@ -1,6 +1,16 @@
 import "./NewPost.css";
+import { useState } from "react";
+import { Editor } from '../Editor/Editor';
 
 export const NewPost = () => {
+
+  const [text, setText] = useState("");
+
+  const handleTextChange = (htmlValue) => {
+    setText(htmlValue);
+
+  };
+
   return (
     <main className="row animated fadeIn">
       <div className="row">
@@ -37,10 +47,11 @@ export const NewPost = () => {
                   </div>
                   <div className="form-group">
                     <label>Receta</label>
-                    <ckeditor
-                      /*editor={Editor}*/ name="post"
-                      required
-                    ></ckeditor>
+                    <Editor
+                      value={''}
+                      onChange={handleTextChange}
+                      height
+                    />
                   </div>
                   <div className="form-group">
                     <label>Elige una foto</label>
