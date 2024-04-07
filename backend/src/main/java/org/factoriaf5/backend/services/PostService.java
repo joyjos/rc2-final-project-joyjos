@@ -1,5 +1,9 @@
 package org.factoriaf5.backend.services;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +16,7 @@ import org.factoriaf5.backend.persistence.posts.PostRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 public class PostService {
@@ -37,9 +42,23 @@ public class PostService {
         return Optional.empty();
     }
 
-    public PostResponse createPost(PostRequest postRequest) {
+    // public PostResponse createPost(PostRequest postRequest) {
         
-        Post newPost = new Post(postRequest.getTitle(), postRequest.getPost(), postRequest.getImage(), postRequest.getCategory(), postRequest.getDatePost());
+    //     Post newPost = new Post(postRequest.getTitle(), postRequest.getPost(), postRequest.getImage(), postRequest.getCategory(), postRequest.getDatePost());
+    //     Post savedPost = postRepository.save(newPost);
+
+    //     return new PostResponse(savedPost.getId(), savedPost.getTitle(), savedPost.getPost(), savedPost.getImage(), savedPost.getCategory(), savedPost.getDatePost());
+    // }
+
+    public PostResponse createPost(PostRequest postRequest, MultipartFile image) throws IOException {
+        // Guardar la imagen en el sistema de archivos
+        String fileName = UUID.randomUUID().toString() + "_" + image.getOriginalFilename();
+        Path path = Paths.get("uploads");
+        Files.createDirectories(path);
+        Files.copy(image.getInputStream(), path.resolve(fileName));
+
+        // Guardar la información del post en la base de datos
+        Post newPost = new Post(postRequest.getTitle(), postRequest.getPost(), fileName, postRequest.getCategory(), postRequest.getDatePost());
         Post savedPost = postRepository.save(newPost);
 
         return new PostResponse(savedPost.getId(), savedPost.getTitle(), savedPost.getPost(), savedPost.getImage(), savedPost.getCategory(), savedPost.getDatePost());
@@ -50,7 +69,7 @@ public class PostService {
         
         if (optionalPost.isPresent()) {
             Post existingPost = optionalPost.get();
-
+            
             if (postRequest.getTitle() != null) {
                 existingPost.setTitle(postRequest.getTitle());
             }
