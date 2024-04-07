@@ -7,7 +7,9 @@ import org.factoriaf5.backend.controllers.users.UserResponse;
 import org.factoriaf5.backend.persistence.users.User;
 import org.factoriaf5.backend.persistence.users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserService {
     
     @Autowired
