@@ -1,15 +1,24 @@
 import "./Posts.css";
 import { FaEdit, FaTrash } from "react-icons/fa";
-import { useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { PostContext } from "../../../../middleware/context/PostContext";
 import { Link } from "react-router-dom";
 import { truncate } from "../../../../helpers/utils";
 
 
 export const Posts = () => {
-  const { posts } = useContext(PostContext);
+  const { posts, deletePost } = useContext(PostContext);
 
-  console.log(posts);
+  const [updatedPosts, setUpdatedPosts] = useState(posts);
+
+  useEffect(() => {
+    setUpdatedPosts(posts);
+  }, [posts]);
+
+  const handleDeletePost = (id) => {
+    deletePost(id);
+    setUpdatedPosts(updatedPosts.filter(post => post.id !== id));
+  };
 
   return (
     <main className="row animated fadeIn">
@@ -37,7 +46,7 @@ export const Posts = () => {
                 </Link>
               </div>
               <h3 className="card-title">
-                Recetas (<small>{posts.length}</small>)
+                Recetas (<small>{updatedPosts.length}</small>)
               </h3>
               <table className="table table-hover">
                 <thead>
@@ -50,7 +59,7 @@ export const Posts = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {posts.map((post) => (
+                  {updatedPosts.map((post) => (
                     <tr key={post.id}>
                       <td>{post.title}</td>
                       <td>{post.category}</td>
@@ -76,7 +85,7 @@ export const Posts = () => {
                           </button>
                         </Link>
                         <button
-                          onClick={() => borrarPost(post)}
+                          onClick={() => handleDeletePost(post.id)}
                           className="btn btn-danger"
                           title="Eliminar esta receta"
                         >

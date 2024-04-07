@@ -6,6 +6,8 @@ export const PostContext = createContext();
 export const PostProvider = ({ children }) => {
     const [posts, setPosts] = useState([]);
     const [selectedPost, setSelectedPost] = useState(null);
+    const [savedPost, setSavedPost] = useState(null);
+    const [deletedPost, setDeletedPost] = useState(null);
 
     const postService = new PostService();
   
@@ -30,8 +32,38 @@ export const PostProvider = ({ children }) => {
       }
     };
 
+    const createPost = async (post) => {
+      try {
+        const createdPost = await postService.createPost(post);
+        setPosts((prevPosts) => [...prevPosts, createdPost]);
+        setSelectedPost(createdPost);
+        setIsCreatingPost(false);
+      } catch (error) {
+        console.error("Error creating post", error);
+        setIsCreatingPost(false);
+      }
+    };
+
+    const updatePost = async (id, updatedPost) => {
+      try {
+        const savedPost = await postService.updatePost(id, updatedPost);
+        setSavedPost(savedPost);
+      } catch (error) {
+        console.error("Error saving post", error);
+      }
+    }
+
+    const deletePost = async (id) => {
+      try {
+        const deletedPost = await postService.deletePost(id);
+        setDeletedPost(deletedPost);
+      } catch (error) {
+        console.error("Error deleting post", error);
+      }
+    }
+
     return (
-        <PostContext.Provider value={{ posts, selectedPost, getPostById }}>
+        <PostContext.Provider value={{ posts, selectedPost, getPostById, createPost, updatePost, deletePost }}>
           {children}
         </PostContext.Provider>
       );
