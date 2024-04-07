@@ -37,10 +37,8 @@ export const PostProvider = ({ children }) => {
         const createdPost = await postService.createPost(post);
         setPosts((prevPosts) => [...prevPosts, createdPost]);
         setSelectedPost(createdPost);
-        setIsCreatingPost(false);
       } catch (error) {
         console.error("Error creating post", error);
-        setIsCreatingPost(false);
       }
     };
 

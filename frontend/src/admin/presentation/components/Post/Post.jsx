@@ -1,16 +1,19 @@
-import { useContext, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { PostContext } from "../../../../middleware/context/PostContext";
-import { Editor } from '../Editor/Editor';
+import { Editor } from "../Editor/Editor";
 
 export const Post = () => {
   const { id } = useParams();
 
-  const { selectedPost, getPostById } = useContext(PostContext);
+  const { selectedPost, getPostById, updatePost } = useContext(PostContext);
 
-  const handleTextChange = (htmlValue) => {
-    setText(htmlValue);
-  };
+  const [formData, setFormData] = useState({
+    title: selectedPost?.title || "",
+    category: selectedPost?.category || "",
+    post: selectedPost?.post || "",
+    image: selectedPost?.image || null,
+  });
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -22,6 +25,28 @@ export const Post = () => {
     };
     fetchPost();
   }, [id]);
+
+  const handleTextChange = (htmlValue) => {
+    setFormData({ ...formData, post: htmlValue });
+  };
+
+  const handleImageChange = (event) => {
+    setFormData({ ...formData, image: event.target.files[0] });
+  };
+
+  const handleInputChange = (event) => {
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await updatePost(id, formData);
+    } catch (error) {
+      console.error("Error updating post:", error);
+    }
+  };
 
   if (!selectedPost) {
     return null;
@@ -37,33 +62,37 @@ export const Post = () => {
               <h6 className="card-subtitle">Dulces Emociones</h6>
               <div className="row">
                 <div className="col-sm-12 col-xs-12">
-                  <form /*onSubmit={actualizarPost}*/ className="form-material">
+                  <form onSubmit={handleSubmit} className="form-material">
                     <div className="form-group">
                       <label>Nombre</label>
                       <input
-                        name={selectedPost.title}
+                        name="title"
                         type="text"
                         className="form-control joy"
-                        value={selectedPost.title}
-                        onChange={(e) => setSelectedPost({ ...selectedPost, title: e.target.value })}
+                        value={formData.title}
+                        onChange={handleInputChange}
                         required
                       />
                     </div>
                     <div className="form-group">
                       <label>Categoría</label>
                       <input
-                        name="categoria"
+                        name="category"
                         type="text"
                         className="form-control joy"
-                        value={selectedPost.category}
-                        onChange={(e) => setSelectedPost({ ...selectedPost, category: e.target.value })}
+                        value={formData.category}
+                        onChange={handleInputChange}
                         required
                       />
                     </div>
                     <div className="form-group">
                       <label>Receta</label>
                       <div className="card">
-                      <Editor value={selectedPost.post} onChange={handleTextChange} height/>
+                        <Editor
+                          value={formData.post}
+                          onChange={handleTextChange}
+                          height
+                        />
                       </div>
                     </div>
                     <div className="form-group" id="image-popups">
@@ -92,7 +121,8 @@ export const Post = () => {
                           <span className="fileinput-exists">Cambiar</span>
                           <input
                             type="file"
-                            name="..." /*onChange={uploadFile}*/
+                            name="image"
+                            onChange={handleImageChange}
                           />
                         </span>
                         <a

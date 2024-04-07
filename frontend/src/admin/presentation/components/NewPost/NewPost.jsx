@@ -1,14 +1,27 @@
 import "./NewPost.css";
-import { useState } from "react";
-import { Editor } from '../Editor/Editor';
+import { useState, useContext } from "react";
+import { PostContext } from "../../../../middleware/context/PostContext";
+import { Editor } from "../Editor/Editor";
 
 export const NewPost = () => {
-
   const [text, setText] = useState("");
+
+  const { createPost } = useContext(PostContext);
 
   const handleTextChange = (htmlValue) => {
     setText(htmlValue);
+  };
 
+  const handleCreatePost = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData();
+    formData.append('title', event.target.title.value);
+    formData.append('post', event.target.post.value);
+    formData.append('image', event.target.image.files[0]);
+    formData.append('category', event.target.category.value);
+
+    await createPost(formData);
   };
 
   return (
@@ -21,14 +34,14 @@ export const NewPost = () => {
             <div className="row">
               <div className="col-sm-12 col-xs-12">
                 <form
-                  // onSubmit={registrarPost}
+                  onSubmit={handleCreatePost}
                   encType="multipart/form-data"
                   className="form-material"
                 >
                   <div className="form-group">
                     <label>Nombre</label>
                     <input
-                      name="nombre"
+                      name="title"
                       type="text"
                       className="form-control joy"
                       placeholder="Nombre"
@@ -38,7 +51,7 @@ export const NewPost = () => {
                   <div className="form-group">
                     <label>Categoría</label>
                     <input
-                      name="categoria"
+                      name="category"
                       type="text"
                       className="form-control joy"
                       placeholder="Categoría"
@@ -47,11 +60,7 @@ export const NewPost = () => {
                   </div>
                   <div className="form-group">
                     <label>Receta</label>
-                    <Editor
-                      value={''}
-                      onChange={handleTextChange}
-                      height
-                    />
+                    <input type="text" name="post" />
                   </div>
                   <div className="form-group">
                     <label>Elige una foto</label>
@@ -70,7 +79,7 @@ export const NewPost = () => {
                         <span className="fileinput-exists">Cambiar</span>
                         <input
                           type="file"
-                          name="..." /*onChange={uploadFile}*/
+                          name="image" /*onChange={uploadFile}*/
                         />
                       </span>
                       <a
