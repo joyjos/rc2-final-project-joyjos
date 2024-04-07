@@ -2,6 +2,8 @@ package org.factoriaf5.backend.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import org.factoriaf5.backend.controllers.users.UserResponse;
 import org.factoriaf5.backend.persistence.users.User;
@@ -22,5 +24,14 @@ public class UserService {
             users.add(new UserResponse(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail()));
         }
         return users;
+    }
+
+    public Optional<UserResponse> getUserById(UUID id) {
+        Optional<User> userOpcional = userRepository.findById(id);
+        if(userOpcional.isPresent()) {
+            User user = userOpcional.get();
+            return Optional.of(new UserResponse(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail()));
+        }
+        return Optional.empty();
     }
 }

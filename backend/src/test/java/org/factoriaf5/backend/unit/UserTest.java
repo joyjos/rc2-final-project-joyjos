@@ -8,10 +8,17 @@ import org.junit.jupiter.api.Test;
 public class UserTest {
 
     @Test
-    public void testGetName() {
+    public void testGetFirstName() {
         User user = new User();
-        user.setName("Test Name");
-        assertEquals("Test Name", user.getName());
+        user.setFirstName("Test FirstName");
+        assertEquals("Test FirstName", user.getFirstName());
+    }
+
+    @Test
+    public void testGetLastName() {
+        User user = new User();
+        user.setLastName("Test LastName");
+        assertEquals("Test LastName", user.getLastName());
     }
 
     @Test
@@ -30,8 +37,9 @@ public class UserTest {
 
     @Test
     public void testUserFieldValues() {
-        User user = new User("Test Name", "Test Email", "Test Password");
-        assertEquals("Test Name", user.getName());
+        User user = new User("Test FirstName", "Test LastName", "Test Email", "Test Password");
+        assertEquals("Test FirstName", user.getFirstName());
+        assertEquals("Test LastName", user.getLastName());
         assertEquals("Test Email", user.getEmail());
         assertEquals("Test Password", user.getPassword());
     }
