@@ -1,5 +1,6 @@
 package org.factoriaf5.backend.controllers.posts;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -52,12 +53,14 @@ public class PostController {
 
     @PostMapping
     public ResponseEntity<PostResponse> createPost(@ModelAttribute PostRequest postRequest,
-    @RequestParam("image") MultipartFile image) {
+    @RequestParam("file") MultipartFile file) {
         try {
-            PostResponse createdPost = postService.createPost(postRequest, image);
+            PostResponse createdPost = postService.createPost(postRequest, file);
             return ResponseEntity.status(HttpStatus.CREATED).body(createdPost);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null); // Datos de entrada incorrectos
+        } catch (IOException e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null); // Error al procesar la imagen
         }
     }
     
