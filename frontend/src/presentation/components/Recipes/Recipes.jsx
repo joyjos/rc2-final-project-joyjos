@@ -16,7 +16,7 @@ export const Recipes = () => {
               to={`/post/${post.id}`}
               className="rk-item ae-masonry__item"
             >
-              <img src={post.image} alt={post.title} />
+              <img src={`http://localhost:8080/api/images/${post.image}`} alt={post.title} />
               <div className="item-meta">
                 <h2>{post.title}</h2>
                 <p>{post.category}</p>

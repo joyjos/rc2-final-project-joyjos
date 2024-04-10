@@ -30,7 +30,7 @@ export const Recipe = () => {
     {selectedPost && (
       <header
         className="animated fadeIn rk-portfolio-cover post-inside-1"
-        style={{ backgroundImage: `url(${selectedPost.image})` }}
+        style={{ backgroundImage: `url(http://localhost:8080/api/images/${selectedPost.image})` }}
       >
         <div className="item-inside__meta">
           <h1 className="bgTitle ae-u-bolder rk-portfolio-title">{selectedPost.title}</h1>

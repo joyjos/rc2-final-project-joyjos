@@ -7,14 +7,14 @@ export const Blog = () => {
   const { posts } = useContext(PostContext);
 
   return (
-    <section className="ae-container-fluid rk-main animated fadeIn">
+    <section className="ae-container-fluid rk-main blog animated fadeIn">
       <article className="ae-container-fluid ae-container-fluid--inner rk-blog">
         <div className="rk-blog__items">
           {sort(posts).map((post) => (
             <div key={post.id} className="rk-blog__item">
               <div
                 className="post-img post-1 rk-landscape-alt rk-tosquare"
-                style={{ backgroundImage: `url(${post.image})` }}
+                style={{ backgroundImage: `url(http://localhost:8080/api/images/${post.image})` }}
               >
                 <div className="item-meta">
                   <p>
