@@ -36,7 +36,7 @@ public class PostController {
     @GetMapping("/{id}")
     public ResponseEntity<PostResponse> getPostById(@PathVariable UUID id) {
         Optional<PostResponse> optionalPostResponse = postService.getPostById(id);
-        
+
         if (optionalPostResponse.isPresent()) {
             return ResponseEntity.ok(optionalPostResponse.get());
         } else {
@@ -45,22 +45,24 @@ public class PostController {
     }
 
     // @PostMapping
-    // public ResponseEntity<PostResponse> createPost(@RequestBody PostRequest postRequest) {
-    //     PostResponse createdPost = postService.createPost(postRequest);
-        
-    //     return ResponseEntity.status(HttpStatus.CREATED).body(createdPost);
+    // public ResponseEntity<PostResponse> createPost(@RequestBody PostRequest
+    // postRequest) {
+    // PostResponse createdPost = postService.createPost(postRequest);
+
+    // return ResponseEntity.status(HttpStatus.CREATED).body(createdPost);
     // }
 
     @PostMapping
     public ResponseEntity<PostResponse> createPost(@ModelAttribute PostRequest postRequest,
-    @RequestParam("file") MultipartFile file) {
+            @RequestParam("file") MultipartFile file) {
         System.out.println("Datos recibidos: " + postRequest.toString()); // Imprime el objeto PostRequest en la consola
-        System.out.println("Archivo recibido: " + file.getOriginalFilename()); // Imprime el nombre del archivo en la consola
+        System.out.println("Archivo recibido: " + file.getOriginalFilename()); // Imprime el nombre del archivo en la
+                                                                               // consola
         System.out.println("Datos recibidos:");
-    System.out.println("Título: " + postRequest.getTitle());
-    System.out.println("Contenido: " + postRequest.getPost());
-    System.out.println("Categoría: " + postRequest.getCategory());
-    System.out.println("Nombre del archivo recibido: " + file.getOriginalFilename());
+        System.out.println("Título: " + postRequest.getTitle());
+        System.out.println("Contenido: " + postRequest.getPost());
+        System.out.println("Categoría: " + postRequest.getCategory());
+        System.out.println("Nombre del archivo recibido: " + file.getOriginalFilename());
         try {
             PostResponse createdPost = postService.createPost(postRequest, file);
             return ResponseEntity.status(HttpStatus.CREATED).body(createdPost);
@@ -70,22 +72,22 @@ public class PostController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null); // Error al procesar la imagen
         }
     }
-    
+
     @PatchMapping("/{id}")
     public ResponseEntity<PostResponse> updatePost(@PathVariable UUID id, @RequestBody PostRequest postRequest) {
         Optional<PostResponse> optionalPostResponse = postService.updatePost(id, postRequest);
-        
+
         if (optionalPostResponse.isPresent()) {
             return ResponseEntity.ok(optionalPostResponse.get());
         } else {
             return ResponseEntity.notFound().build();
         }
     }
-    
+
     @DeleteMapping("/{id}")
     public ResponseEntity<PostResponse> deletePost(@PathVariable UUID id) {
         Optional<PostResponse> optionalPostResponse = postService.deletePost(id);
-        
+
         if (optionalPostResponse.isPresent()) {
             return ResponseEntity.ok(optionalPostResponse.get());
         } else {

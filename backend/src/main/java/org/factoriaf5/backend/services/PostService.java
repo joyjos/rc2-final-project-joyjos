@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -58,7 +59,7 @@ public class PostService {
         Files.copy(image.getInputStream(), path.resolve(fileName));
 
         // Guardar la información del post en la base de datos
-        Post newPost = new Post(postRequest.getTitle(), postRequest.getPost(), fileName, postRequest.getCategory(), postRequest.getDatePost());
+        Post newPost = new Post(postRequest.getTitle(), postRequest.getPost(), fileName, postRequest.getCategory(), LocalDate.now());
         Post savedPost = postRepository.save(newPost);
 
         return new PostResponse(savedPost.getId(), savedPost.getTitle(), savedPost.getPost(), savedPost.getImage(), savedPost.getCategory(), savedPost.getDatePost());
