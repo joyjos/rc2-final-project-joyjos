@@ -100,14 +100,14 @@
 }
 
 .rk-menu__link:focus {
-  color: var(--special);
+  color: var(--chocolate);
 }
 
-a {
+.blog a  {
   color: var(--chocolate) !important;
 }
 
-a:hover {
+.blog a:hover {
   color:var(--special) !important;
 }
 

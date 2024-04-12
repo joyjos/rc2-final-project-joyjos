@@ -4,6 +4,7 @@ aside {
     height: 100vh;
     color: var(--special);
     float: left;
+    overflow-y: auto;
 }
 
 .aside {
