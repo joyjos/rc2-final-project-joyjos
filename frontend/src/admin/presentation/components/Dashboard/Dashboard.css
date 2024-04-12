@@ -12,13 +12,13 @@
 }
 
 .dashboard button {
-    width:23rem;
+    width:17rem;
     height: 3rem;
     background-color: var(--chocolate);
+    border-color: var(--chocolate);
     color: var(--special);
     border: none;
     margin: 0.5rem;
     font-size: 1.5rem;
-    border-radius: 0.3rem;
     text-transform: uppercase;
 }

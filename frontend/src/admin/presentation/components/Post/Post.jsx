@@ -1,10 +1,11 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { PostContext } from "../../../../middleware/context/PostContext";
 import { Editor } from "../Editor/Editor";
 
 export const Post = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const { selectedPost, getPostById, updatePost } = useContext(PostContext);
 
@@ -43,6 +44,7 @@ export const Post = () => {
 
     try {
       await updatePost(id, formData);
+      navigate("/admin/posts");
     } catch (error) {
       console.error("Error updating post:", error);
     }
@@ -69,7 +71,7 @@ export const Post = () => {
                         name="title"
                         type="text"
                         className="form-control joy"
-                        value={selectedPost.title}
+                        value={formData.title || selectedPost.title}
                         onChange={handleInputChange}
                         required
                       />
@@ -80,7 +82,7 @@ export const Post = () => {
                         name="category"
                         type="text"
                         className="form-control joy"
-                        value={selectedPost.category}
+                        value={formData.category ||selectedPost.category}
                         onChange={handleInputChange}
                         required
                       />
@@ -89,7 +91,7 @@ export const Post = () => {
                       <label>Receta</label>
                       <div className="card">
                         <Editor
-                          value={selectedPost.post}
+                          value={formData.post ||selectedPost.post}
                           onChange={handleTextChange}
                           height
                         />
@@ -138,7 +140,7 @@ export const Post = () => {
                       type="submit"
                       className="btn btn-success waves-effect waves-light m-r-10"
                     >
-                      <i className="fa fa-save"></i> Guardar
+                      Guardar
                     </button>
                     <a
                       href="/admin/posts"

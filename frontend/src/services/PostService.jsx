@@ -4,21 +4,31 @@ const API_URL = "http://localhost:8080/api/posts";
 
 export class PostService {
   async showPosts() {
-    const response = await axios.get(`${API_URL}`);
-    return response.data;
+    try {
+      const response = await axios.get(`${API_URL}`);
+      return response.data;
+    } catch (error) {
+      console.error("Error al mostrar todos los posts:", error);
+      throw error;
+    }
   }
 
   async getPostById(id) {
-    const response = await axios.get(`${API_URL}/${id}`);
-    return response.data;
+    try {
+      const response = await axios.get(`${API_URL}/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error("Error al mostrar el post:", error);
+      throw error;
+    }
   }
 
   async createPost(post) {
     try {
       const response = await axios.post(API_URL, post, {
         headers: {
-          'Content-Type': 'multipart/form-data' // Establece el encabezado correcto para enviar archivos
-        }
+          "Content-Type": "multipart/form-data",
+        },
       });
       return response.data;
     } catch (error) {
@@ -28,12 +38,22 @@ export class PostService {
   }
 
   async updatePost(id, updatedPost) {
-    const response = await axios.patch(`${API_URL}`, updatedPost);
-    return response.data;
+    try {
+      const response = await axios.patch(`${API_URL}/${id}`, updatedPost);
+      return response.data;
+    } catch (error) {
+      console.error("Error al modificar el post:", error);
+      throw error;
+    }
   }
 
   async deletePost(id) {
-    const response = await axios.delete(`${API_URL}/${id}`);
-    return response.data;
+    try {
+      const response = await axios.delete(`${API_URL}/${id}`);
+      return response.data;
+    } catch (error) {
+      console.error("Error al eliminar el post:", error);
+      throw error;
+    }
   }
 }

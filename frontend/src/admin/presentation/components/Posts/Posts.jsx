@@ -19,6 +19,15 @@ export const Posts = () => {
     setUpdatedPosts(updatedPosts.filter((post) => post.id !== id));
   };
 
+  const handleUpdatePost = async (updatedPost) => {
+    try {
+      await updatePost(updatedPost.id, updatedPost);
+      setUpdatedPosts(updatedPosts.map(post => post.id === updatedPost.id ? updatedPost : post));
+    } catch (error) {
+      console.error("Error updating post:", error);
+    }
+  };
+
   return (
     <main className="row container-posts animated fadeIn">
       <div className="row">

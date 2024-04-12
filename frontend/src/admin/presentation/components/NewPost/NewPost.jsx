@@ -1,5 +1,6 @@
 import "./NewPost.css";
 import { useState, useContext } from "react";
+import { useNavigate } from 'react-router-dom';
 import { PostContext } from "../../../../middleware/context/PostContext";
 import { Editor } from "../Editor/Editor";
 import { FileUpload } from 'primereact/fileupload';
@@ -16,6 +17,8 @@ export const NewPost = () => {
   const [formData, setFormData] = useState(initialFormData);
   const [selectedImage, setSelectedImage] = useState(null);
   const { createPost } = useContext(PostContext);
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData((prevFormData) => ({
@@ -61,10 +64,10 @@ export const NewPost = () => {
       formDataToSend.append("post", formData.post);
       formDataToSend.append("file", formData.file);
       formDataToSend.append("category", formData.category);
-      console.log(formDataToSend);
       createPost(formDataToSend);
       setFormData(initialFormData);
       setSelectedImage(null);
+      navigate("/admin/posts");
     }
   };
 
