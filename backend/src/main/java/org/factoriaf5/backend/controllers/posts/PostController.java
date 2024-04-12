@@ -54,6 +54,13 @@ public class PostController {
     @PostMapping
     public ResponseEntity<PostResponse> createPost(@ModelAttribute PostRequest postRequest,
     @RequestParam("file") MultipartFile file) {
+        System.out.println("Datos recibidos: " + postRequest.toString()); // Imprime el objeto PostRequest en la consola
+        System.out.println("Archivo recibido: " + file.getOriginalFilename()); // Imprime el nombre del archivo en la consola
+        System.out.println("Datos recibidos:");
+    System.out.println("Título: " + postRequest.getTitle());
+    System.out.println("Contenido: " + postRequest.getPost());
+    System.out.println("Categoría: " + postRequest.getCategory());
+    System.out.println("Nombre del archivo recibido: " + file.getOriginalFilename());
         try {
             PostResponse createdPost = postService.createPost(postRequest, file);
             return ResponseEntity.status(HttpStatus.CREATED).body(createdPost);
