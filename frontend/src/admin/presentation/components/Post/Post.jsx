@@ -69,7 +69,7 @@ export const Post = () => {
                         name="title"
                         type="text"
                         className="form-control joy"
-                        value={formData.title}
+                        value={selectedPost.title}
                         onChange={handleInputChange}
                         required
                       />
@@ -80,7 +80,7 @@ export const Post = () => {
                         name="category"
                         type="text"
                         className="form-control joy"
-                        value={formData.category}
+                        value={selectedPost.category}
                         onChange={handleInputChange}
                         required
                       />
@@ -89,7 +89,7 @@ export const Post = () => {
                       <label>Receta</label>
                       <div className="card">
                         <Editor
-                          value={formData.post}
+                          value={selectedPost.post}
                           onChange={handleTextChange}
                           height
                         />
@@ -99,7 +99,7 @@ export const Post = () => {
                       <label>Foto</label>
                       <br />
                       <img
-                        src={selectedPost.image}
+                        src={`http://localhost:8080/api/images/${selectedPost.image}`}
                         alt={selectedPost.title}
                         className="img-200"
                       />

@@ -13,14 +13,16 @@ export class PostService {
     return response.data;
   }
 
-  async createPost(formData) {
-    
-
+  async createPost(post) {
     try {
-      const response = await axios.post(`${API_URL}`, formData);
+      const response = await axios.post(API_URL, post, {
+        headers: {
+          'Content-Type': 'multipart/form-data' // Establece el encabezado correcto para enviar archivos
+        }
+      });
       return response.data;
     } catch (error) {
-      console.error("Error creando publicación:", error.response.data);
+      console.error("Error al crear el post:", error);
       throw error;
     }
   }

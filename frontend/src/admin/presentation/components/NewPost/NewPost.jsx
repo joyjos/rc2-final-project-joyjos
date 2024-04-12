@@ -2,26 +2,70 @@ import "./NewPost.css";
 import { useState, useContext } from "react";
 import { PostContext } from "../../../../middleware/context/PostContext";
 import { Editor } from "../Editor/Editor";
+import { FileUpload } from 'primereact/fileupload';
+        
+
+const initialFormData = {
+  title: "",
+  post: "",
+  file: null,
+  category: "",
+};
 
 export const NewPost = () => {
-  const [text, setText] = useState("");
-
+  const [formData, setFormData] = useState(initialFormData);
+  const [selectedImage, setSelectedImage] = useState(null);
   const { createPost } = useContext(PostContext);
 
-  const handleTextChange = (htmlValue) => {
-    setText(htmlValue);
+  const handleChange = (e) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [e.target.name]: e.target.value,
+    }));
   };
 
-  const handleCreatePost = async (event) => {
-    event.preventDefault();
+  const handleImageChange = (e) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      file: e.target.files[0],
+    }));
+    const reader = new FileReader();
+    reader.onload = () => {
+      setSelectedImage(reader.result);
+    };
+    if (e.target.files[0]) {
+      reader.readAsDataURL(e.target.files[0]);
+    }
+  };
 
-    const formData = new FormData();
-    formData.append('title', event.target.title.value);
-    formData.append('post', event.target.post.value);
-    formData.append('image', event.target.image.files[0]);
-    formData.append('category', event.target.category.value);
+  const handleContentChange = (content) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      post: content,
+    }));
+  };
 
-    await createPost(formData);
+  const handleImageRemove = () => {
+    setSelectedImage(null);
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      file: null,
+    }));
+  };
+
+  const handleCreatePost = (e) => {
+    e.preventDefault();
+    if (formData.file) {
+      const formDataToSend = new FormData();
+      formDataToSend.append("title", formData.title);
+      formDataToSend.append("post", formData.post);
+      formDataToSend.append("file", formData.file);
+      formDataToSend.append("category", formData.category);
+      console.log(formDataToSend);
+      createPost(formDataToSend);
+      setFormData(initialFormData);
+      setSelectedImage(null);
+    }
   };
 
   return (
@@ -43,8 +87,10 @@ export const NewPost = () => {
                     <input
                       name="title"
                       type="text"
+                      value={formData.title}
                       className="form-control joy"
                       placeholder="Nombre"
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -53,43 +99,34 @@ export const NewPost = () => {
                     <input
                       name="category"
                       type="text"
+                      value={formData.category}
                       className="form-control joy"
                       placeholder="Categoría"
+                      onChange={handleChange}
                       required
                     />
                   </div>
                   <div className="form-group">
                     <label>Receta</label>
-                    <input type="text" name="post" />
+                    <Editor
+                      name="post"
+                      value={formData.post}
+                      onChange={handleContentChange}
+                    />
                   </div>
                   <div className="form-group">
                     <label>Elige una foto</label>
-                    <div
-                      className="fileinput fileinput-new input-group"
-                      data-provides="fileinput"
-                    >
-                      <div className="form-control" data-trigger="fileinput">
-                        <i className="glyphicon glyphicon-file fileinput-exists"></i>
-                        <span className="fileinput-filename"></span>
+                    <input
+                      type="file"
+                      name="file"
+                      onChange={handleImageChange}
+                    />
+                    {selectedImage && (
+                      <div>
+                        <img src={selectedImage} alt="Imagen seleccionada" style={{ maxWidth: "100px" }} />
+                        <button onClick={handleImageRemove}>Eliminar</button>
                       </div>
-                      <span className="input-group-addon btn btn-default btn-file">
-                        <span className="fileinput-new">
-                          Selecciona archivo
-                        </span>
-                        <span className="fileinput-exists">Cambiar</span>
-                        <input
-                          type="file"
-                          name="image" /*onChange={uploadFile}*/
-                        />
-                      </span>
-                      <a
-                        href="#"
-                        className="input-group-addon btn btn-default fileinput-exists"
-                        data-dismiss="fileinput"
-                      >
-                        Eliminar
-                      </a>
-                    </div>
+                    )}
                   </div>
                   <button
                     type="submit"

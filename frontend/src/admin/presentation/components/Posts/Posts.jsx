@@ -70,7 +70,7 @@ export const Posts = () => {
                       ></td>
                       <td id="image-popups">
                         <img
-                          src={post.image}
+                          src={`http://localhost:8080/api/images/${post.image}`}
                           className="img-responsive img-thumbnail img-50"
                           alt={post.title}
                         />
