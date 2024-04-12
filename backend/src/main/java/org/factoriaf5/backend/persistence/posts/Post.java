@@ -3,14 +3,10 @@ package org.factoriaf5.backend.persistence.posts;
 import java.time.LocalDate;
 import java.util.UUID;
 
-import org.springframework.boot.context.properties.bind.DefaultValue;
-
-import jakarta.annotation.Nonnull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,6 +17,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@RequiredArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name="posts")
 public class Post {
@@ -28,17 +27,12 @@ public class Post {
     @GeneratedValue
     private UUID id;
     @Column(length=45)
-    @Nonnull
-    private String title;
+    @NonNull private String title;
     @Column(columnDefinition="TEXT")
-    @Nonnull
-    private String post;
+    @NonNull private String post;
     @Column(length=100)
-    @Nonnull
-    private String image;
+    @NonNull private String image;
     @Column(length=45)
-    @Nonnull
-    private String category;
-    @Nonnull
-    private LocalDate datePost;
+    @NonNull private String category;
+    @NonNull private LocalDate datePost;
 }
