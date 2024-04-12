@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { PostContext } from "../../../../middleware/context/PostContext";
 import { Editor } from "../Editor/Editor";
 import { FileUpload } from 'primereact/fileupload';
-        
+
 
 const initialFormData = {
   title: "",

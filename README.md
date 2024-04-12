@@ -7,3 +7,23 @@
 # JOY SWEETS :: Dulces Emociones
 
 Las personas interesadas en recetas de dulces van a poder consultar la aplicación.
+
+
+## Cómo lanzar el proyecto
+
+### Frontend
+
+```
+cd frontend
+npm install 
+npm run dev
+```
+
+### Backend
+
+Necesitamos una base de datos postgres, de acuerdo con la configuración de `src/main/resources/application.properties`
+
+```
+cd backend
+mvn spring-boot:run
+```
