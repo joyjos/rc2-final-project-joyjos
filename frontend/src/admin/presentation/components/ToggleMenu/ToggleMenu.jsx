@@ -11,7 +11,6 @@ export const ToggleMenu = () => {
 
   return (
     <div>
-      <div className="menu-item">Mi Perfil</div>
 
       <div className="menu-item" onClick={toggleSubMenu1}>Recetas</div>
       <div className={`submenu ${subMenu1Visible ? 'active' : ''}`}>

@@ -1,10 +1,9 @@
 aside {
     background-color: var(--chocolate);
-    width: 15rem;
+    width: 12rem;
     height: 88.5vh;
     color: var(--special);
     float: left;
-    overflow-y: auto;
 }
 
 .aside {
