@@ -1,3 +1,18 @@
-.position {
+.text-right {
     text-align: right;
+}
+
+.container-posts .space {
+    margin-right: 0.5rem;
+}
+
+.special {
+    color: var(--special) !important;
+    border: none;
+    transition: color 0.3s ease;
+}
+
+.special:hover {
+    color: var(--chocolate) !important;
+    border: none;
 }

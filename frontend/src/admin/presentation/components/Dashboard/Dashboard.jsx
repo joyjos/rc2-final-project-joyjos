@@ -6,10 +6,10 @@ export const Dashboard = () => {
   return (
     <main className="row animated fadeIn">
       <section className="dashboard">
-        <h2>Come Dulces Ama</h2>
-        <HiHeart style={{
-      fontSize: 20,
-    }} />
+        <h2>Come Dulces Ama <HiHeart style={{
+      fontSize: 50,
+      color:"var(--special)"}} /></h2>
+        
         <Link to="/admin/posts">
           <button>Recetas</button>
         </Link>

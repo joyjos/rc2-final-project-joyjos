@@ -5,7 +5,6 @@ import { PostContext } from "../../../../middleware/context/PostContext";
 import { Link } from "react-router-dom";
 import { truncate } from "../../../../helpers/utils";
 
-
 export const Posts = () => {
   const { posts, deletePost } = useContext(PostContext);
 
@@ -17,17 +16,15 @@ export const Posts = () => {
 
   const handleDeletePost = (id) => {
     deletePost(id);
-    setUpdatedPosts(updatedPosts.filter(post => post.id !== id));
+    setUpdatedPosts(updatedPosts.filter((post) => post.id !== id));
   };
 
   return (
-    <main className="row animated fadeIn">
+    <main className="row container-posts animated fadeIn">
       <div className="row">
         <div className="col-12">
           <div className="card">
-            <div className="card-body">
-              
-            </div>
+            <div className="card-body"></div>
           </div>
         </div>
       </div>
@@ -39,9 +36,9 @@ export const Posts = () => {
                 <Link to="/admin/post">
                   <button
                     type="button"
-                    className="btn waves-effect waves-light btn-primary position"
+                    className="btn waves-effect waves-light btn-primary"
                   >
-                    <i className="fa fa-plus"></i> Crear Receta
+                    Crear Receta
                   </button>
                 </Link>
               </div>
@@ -78,18 +75,18 @@ export const Posts = () => {
                       <td>
                         <Link to={`/admin/post/${post.id}`}>
                           <button
-                            className="btn btn-primary m-r-10"
+                            className="btn m-r-10 space special"
                             title="Modificar esta receta"
                           >
-                            <FaEdit size={20} color="var(--chocolate)" />
+                            <FaEdit size={20} className="special" />
                           </button>
                         </Link>
                         <button
                           onClick={() => handleDeletePost(post.id)}
-                          className="btn btn-danger"
+                          className="btn special"
                           title="Eliminar esta receta"
                         >
-                          <FaTrash size={20} color="var(--chocolate)" />
+                          <FaTrash size={20} className="special" />
                         </button>
                       </td>
                     </tr>

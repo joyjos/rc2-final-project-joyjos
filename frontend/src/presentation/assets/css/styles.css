@@ -203,7 +203,12 @@
 
 /* Botones */
 
-.btn-primary, .btn-danger {
+.btn-primary, .btn-danger, .btn-success {
+  background-color: var(--chocolate) !important;
+  border: none !important;
+}
+
+.btn-primary:hover, .btn-danger:hover, .btn-success:hover {
   background-color: var(--special) !important;
   border: none !important;
 }
