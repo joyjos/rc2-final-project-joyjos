@@ -43,22 +43,13 @@ public class PostService {
         return Optional.empty();
     }
 
-    // public PostResponse createPost(PostRequest postRequest) {
-        
-    //     Post newPost = new Post(postRequest.getTitle(), postRequest.getPost(), postRequest.getImage(), postRequest.getCategory(), postRequest.getDatePost());
-    //     Post savedPost = postRepository.save(newPost);
-
-    //     return new PostResponse(savedPost.getId(), savedPost.getTitle(), savedPost.getPost(), savedPost.getImage(), savedPost.getCategory(), savedPost.getDatePost());
-    // }
-
     public PostResponse createPost(PostRequest postRequest, MultipartFile image) throws IOException {
-        // Guardar la imagen en el sistema de archivos
+        
         String fileName = UUID.randomUUID().toString() + "_" + image.getOriginalFilename();
         Path path = Paths.get("uploads");
         Files.createDirectories(path);
         Files.copy(image.getInputStream(), path.resolve(fileName));
 
-        // Guardar la información del post en la base de datos
         Post newPost = new Post(postRequest.getTitle(), postRequest.getPost(), fileName, postRequest.getCategory(), LocalDate.now());
         Post savedPost = postRepository.save(newPost);
 

@@ -19,7 +19,8 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-
+@Getter
+@Setter
 @Entity
 @Table(name="posts")
 public class Post {
@@ -40,82 +41,4 @@ public class Post {
     private String category;
     @Nonnull
     private LocalDate datePost;
-    
-    
-
-    public Post() {
-    }
-
-
-   
-
-
-    public Post(String title, String post, String image, String category, LocalDate datePost) {
-        this.title = title;
-        this.post = post;
-        this.image = image;
-        this.category = category;
-        this.datePost = datePost;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-
-    public void setPost(String post) {
-        this.post = post;
-    }
-
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-
-    public void setDatePost(LocalDate datePost) {
-        this.datePost = datePost;
-    }
-
-
-    public UUID getId() {
-        return id;
-    }
-
-
-    public String getTitle() {
-        return title;
-    }
-
-
-    public String getPost() {
-        return post;
-    }
-
-
-    public String getImage() {
-        return image;
-    }
-
-
-    public String getCategory() {
-        return category;
-    }
-
-
-    public LocalDate getDatePost() {
-        return datePost;
-    }
-
-    
 }
