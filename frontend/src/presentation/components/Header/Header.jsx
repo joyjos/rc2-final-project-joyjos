@@ -52,32 +52,12 @@ export const Header = () => {
             </li>
             <li className="rk-menu__item">
               <Link
-                to="/about"
-                className={`rk-menu__link ${
-                  location.pathname.startsWith("/about") ? "active" : ""
-                }`}
-              >
-                Sobre mí
-              </Link>
-            </li>
-            <li className="rk-menu__item">
-              <Link
                 to="/blog"
                 className={`rk-menu__link ${
                   location.pathname.startsWith("/blog") ? "active" : ""
                 }`}
               >
                 Blog
-              </Link>
-            </li>
-            <li className="rk-menu__item">
-              <Link
-                to="/contacto"
-                className={`rk-menu__link ${
-                  location.pathname.startsWith("/contacto") ? "active" : ""
-                }`}
-              >
-                Contacto
               </Link>
             </li>
             <li className="rk-menu__item">
