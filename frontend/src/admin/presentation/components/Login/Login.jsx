@@ -60,10 +60,10 @@ export const Login = () => {
             ¿Olvidaste tu contraseña?
             <Link to="/admin/register">¿No tienes una cuenta? Inscríbete</Link>
           </div>
-          <footer className="footer-admin">
-            Copyright &copy; JOYSWEETS {fechaActual}
-          </footer>
         </form>
+        <div className="footer-admin">
+          Copyright &copy; JOYSWEETS {fechaActual}
+        </div>
       </div>
     </main>
   );

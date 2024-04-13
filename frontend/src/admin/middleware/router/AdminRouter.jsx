@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Layout } from '../../presentation/pages/Layout';
+import { AdminLayout } from '../../presentation/pages/AdminLayout.jsx';
 import { DashboardPage } from "../../presentation/pages/DashboardPage.jsx";
 import { PostsPage } from '../../presentation/pages/PostsPage';
 import { PostPage } from '../../presentation/pages/PostPage';
@@ -13,7 +13,7 @@ export const AdminRouter = () => {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<AdminLayout/>}>
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/posts" element={<PostsPage />} />

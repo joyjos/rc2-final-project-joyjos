@@ -11,7 +11,7 @@
   --lightblue: #4c99c0;
   --chocolate: #3d1901;
   --light-chocolate: #a56f49;
-  --light: #ffc803;
+  --point: #ffc803;
   --special: #f7afbe;
   --light-special:#f5e2e6;
   --input:#f9f2f4;
@@ -214,6 +214,25 @@
 }
 
 /* Card */
+
 .card {
   border: none;
+}
+
+/* LegalPage, PrivacityPage, CookiesPage */
+
+main.legal span {
+  color:var(--blue)
+}
+
+main .cookies {
+  color: var(--blue)
+}
+
+main a.browser {
+  color: var(--blue)
+}
+
+main a.browser:hover {
+  text-decoration: underline;
 }

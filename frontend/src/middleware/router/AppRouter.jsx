@@ -4,6 +4,9 @@ import { RecipePage } from "../../presentation/pages/RecipePage";
 import { Layout } from "../../presentation/pages/Layout";
 import { BlogPage } from "../../presentation/pages/BlogPage";
 import { AdminRouter } from "../../admin/middleware/router/AdminRouter";
+import { PrivacityPage } from "../../presentation/pages/PrivacityPage";
+import { LegalPage } from "../../presentation/pages/LegalPage";
+import { CookiesPage } from "../../presentation/pages/CookiesPage";
 
 export const AppRouter = () => {
   return (
@@ -13,6 +16,9 @@ export const AppRouter = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/post/:id" element={<RecipePage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/legal" element={<LegalPage />} />
+          <Route path="/privacidad" element={<PrivacityPage />} />
+          <Route path="/cookies" element={<CookiesPage />} />
         </Route>
         <Route path="/admin/*" element={<AdminRouter />} />
       </Routes>

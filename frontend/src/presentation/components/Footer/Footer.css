@@ -1,0 +1,35 @@
+footer {
+    display: flex;
+    justify-content:space-around;
+    background-color: var(--chocolate);
+    margin-top: 3rem;
+    padding: 5rem;
+}
+
+footer .dulces {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: var(--blue)
+}
+
+footer .legal {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+footer .legal a {
+    color: var(--special);
+    transition: color 0.3s ease;
+}
+
+footer .legal a:hover {
+    text-decoration: underline;;
+}
+
+footer .copyright {
+    color: var(--blue);
+    margin-top: 2rem;
+}

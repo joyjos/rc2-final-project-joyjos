@@ -28,7 +28,7 @@ export const Register = () => {
   return (
     <main className="admin-register animated fadeIn">
       <div className="admin-container">
-      <img src={logo} width="70" height="70" alt="JOYSWEETS" />
+        <img src={logo} width="70" height="70" alt="JOYSWEETS" />
         <h1>Inscribirse</h1>
         <form onSubmit={handleSubmit}>
           <div className="p-float-label">
@@ -79,8 +79,10 @@ export const Register = () => {
           <div className="remember-container">
             <Link to="/admin">¿Ya tienes cuenta? Regístrate</Link>
           </div>
-          <footer className="footer-admin">Copyright &copy; JOYSWEETS {fechaActual}</footer>
         </form>
+        <div className="footer-admin">
+          Copyright &copy; JOYSWEETS {fechaActual}
+        </div>
       </div>
     </main>
   );
