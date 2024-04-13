@@ -279,3 +279,15 @@ main a.browser:hover {
   background-color: var(--special);
   border: none;
 }
+
+/* ScrollToTop */
+
+.scroll-to-top {
+  background-color: var(--special) !important;
+  border-radius: 0 !important;
+}
+
+.show-scrollTop {
+  opacity: 1;
+  transition: all .2s ease-in-out;
+}
