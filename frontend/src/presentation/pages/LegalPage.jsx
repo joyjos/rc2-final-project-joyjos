@@ -1,5 +1,3 @@
-import React from "react";
-
 export const LegalPage = () => {
   return (
     <main className="ae-container-fluid ae-container-fluid--inner rk-main legal animated fadeIn">
@@ -8,36 +6,37 @@ export const LegalPage = () => {
         <h3>1.- Titular de la Web</h3>
         <p className="au-mb-3">
           El presente aviso legal regula el uso de los Servicios y Contenidos
-          que <span className="blue">JOYSWEETS</span>, inscrita en el
-          Registro Mercantil de Asturias, ofrece a través de la URL{" "}
-          <span className="blue">https://www.joysweets.es</span>, en adelante “la
-          web” o “el sitio web”.
+          que <span className="blue">JOYSWEETS</span>, inscrita en el Registro
+          Mercantil de Asturias, ofrece a través de la URL{" "}
+          <span className="blue">https://www.joysweets.es</span>, en adelante
+          “la web” o “el sitio web”.
         </p>
         <h3>2.- Condiciones de acceso y uso</h3>
         <p className="au-mb-3">
           <span className="blue">JOYSWEETS</span>, pone a disposición de los
           usuarios de Internet el sitio web{" "}
-          <span className="blue">https://www.joysweets.es</span> con la finalidad
-          de informar y dar a conocer las actividades, noticias, productos y
-          servicios prestados por <span className="blue">JOYSWEETS</span>. Los
-          usuarios podrán acceder a la web de forma gratuita, si bien algunos de
-          los contenidos y servicios del sitio pueden requerir el previo
-          registro del usuario en los términos que se detallen en las
-          Condiciones Particulares de los mismos.
+          <span className="blue">https://www.joysweets.es</span> con la
+          finalidad de informar y dar a conocer las actividades, noticias,
+          productos y servicios prestados por{" "}
+          <span className="blue">JOYSWEETS</span>. Los usuarios podrán acceder a
+          la web de forma gratuita, si bien algunos de los contenidos y
+          servicios del sitio pueden requerir el previo registro del usuario en
+          los términos que se detallen en las Condiciones Particulares de los
+          mismos.
         </p>
         <p className="au-mb-3">
           El acceso y/o uso del sitio{" "}
-          <span className="blue">https://www.joysweets.es</span> atribuye a quién
-          lo realiza la condición de usuario e implica su conformidad de forma
-          expresa, plena y sin reservas de todas y cada una de las disposiciones
-          incluidas en las condiciones, advertencias y demás avisos legales
-          contenidos en el presente clausulado, así como en su caso en las
-          Condiciones Particulares que pueden complementarlas, sustituirlas o
-          modificarlas en algún sentido en relación con los servicios y
-          contenidos de la web. En consecuencia, el usuario debe leer
-          atentamente y con detenimiento el presente documento en su totalidad
-          en el mismo momento en que se proponga el uso del sitio web ya que el
-          mismo puede sufrir modificaciones.
+          <span className="blue">https://www.joysweets.es</span> atribuye a
+          quién lo realiza la condición de usuario e implica su conformidad de
+          forma expresa, plena y sin reservas de todas y cada una de las
+          disposiciones incluidas en las condiciones, advertencias y demás
+          avisos legales contenidos en el presente clausulado, así como en su
+          caso en las Condiciones Particulares que pueden complementarlas,
+          sustituirlas o modificarlas en algún sentido en relación con los
+          servicios y contenidos de la web. En consecuencia, el usuario debe
+          leer atentamente y con detenimiento el presente documento en su
+          totalidad en el mismo momento en que se proponga el uso del sitio web
+          ya que el mismo puede sufrir modificaciones.
         </p>
         <p className="au-mb-3">
           <span className="blue">JOYSWEETS</span> se reserva el derecho a
@@ -54,10 +53,10 @@ export const LegalPage = () => {
           través del sitio web el orden público, y en especial a no menospreciar
           o atentar contra los derechos fundamentales y libertades públicas
           reconocidos constitucionalmente y en el resto de la legislación.{" "}
-          <span className="blue">JOYSWEETS</span> no se hace responsable del mal uso
-          que se realice de la información y/o servicios facilitados a través de
-          la web siendo exclusiva responsabilidad del usuario que accede a ellos
-          o los utiliza indebidamente.
+          <span className="blue">JOYSWEETS</span> no se hace responsable del mal
+          uso que se realice de la información y/o servicios facilitados a
+          través de la web siendo exclusiva responsabilidad del usuario que
+          accede a ellos o los utiliza indebidamente.
         </p>
         <p className="au-mb-3">
           Sin perjuicio de lo anterior, dicha información será guardada y
@@ -95,8 +94,8 @@ export const LegalPage = () => {
           elementos insertados en el sitio web (incluyendo sin carácter
           exhaustivo marcas, logotipos, nombres comerciales, textos, imágenes,
           gráficos, rótulos, software…) son titularidad de{" "}
-          <span className="blue">JOYSWEETS</span>, salvo que en ellas se indique que
-          pertenecen a otro titular.
+          <span className="blue">JOYSWEETS</span>, salvo que en ellas se indique
+          que pertenecen a otro titular.
         </p>
         <p className="au-mb-3">
           La descarga de los contenidos y la copia o impresión de cualquier
@@ -108,10 +107,10 @@ export const LegalPage = () => {
           fuentes, sin el consentimiento expreso de{" "}
           <span className="blue">JOYSWEETS</span>. Cualquier infracción de estos
           derechos puede dar lugar a procedimientos extrajudiciales o judiciales
-          que en su caso correspondan. <span className="blue">JOYSWEETS</span> no
-          concede ninguna licencia o autorización de uso de ninguna clase sobre
-          sus derechos de propiedad intelectual o derecho relacionado con el
-          sitio web, los servicios o los contenidos de este.
+          que en su caso correspondan. <span className="blue">JOYSWEETS</span>{" "}
+          no concede ninguna licencia o autorización de uso de ninguna clase
+          sobre sus derechos de propiedad intelectual o derecho relacionado con
+          el sitio web, los servicios o los contenidos de este.
         </p>
         <h3>4.- Jurisdicción y legislación aplicable</h3>
         <p className="au-mb-3">
@@ -121,12 +120,13 @@ export const LegalPage = () => {
         <p className="au-mb-3">
           Para cuantas cuestiones pudieran suscitarse en relación con los
           contenidos del sitio web y sobre la aplicación y cumplimiento de lo
-          aquí establecido, <span className="blue">JOYSWEETS</span> y el usuario se
-          someten a la Jurisdicción de los Juzgados y Tribunales del domicilio
-          del usuario. En el supuesto de que el usuario tuviera su domicilio
-          fuera del Territorio Español, <span className="blue">JOYSWEETS</span> y el
-          usuario se someten con renuncia al fuero que pudiera corresponderles a
-          los Juzgados y Tribunales de Oviedo y/o Bilbao.
+          aquí establecido, <span className="blue">JOYSWEETS</span> y el usuario
+          se someten a la Jurisdicción de los Juzgados y Tribunales del
+          domicilio del usuario. En el supuesto de que el usuario tuviera su
+          domicilio fuera del Territorio Español,{" "}
+          <span className="blue">JOYSWEETS</span> y el usuario se someten con
+          renuncia al fuero que pudiera corresponderles a los Juzgados y
+          Tribunales de Oviedo y/o Bilbao.
         </p>
       </div>
     </main>

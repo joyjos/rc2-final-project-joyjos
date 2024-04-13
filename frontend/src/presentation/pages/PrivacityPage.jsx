@@ -1,5 +1,3 @@
-import React from "react";
-
 export const PrivacityPage = () => {
   return (
     <main className="ae-container-fluid ae-container-fluid--inner rk-main legal animated fadeIn">

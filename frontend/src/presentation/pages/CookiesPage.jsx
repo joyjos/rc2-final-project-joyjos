@@ -1,5 +1,3 @@
-import React from "react";
-
 export const CookiesPage = () => {
   return (
     <main className="ae-container-fluid ae-container-fluid--inner rk-main legal animated fadeIn">
@@ -117,11 +115,11 @@ export const CookiesPage = () => {
         </p>
         <h3>5.- Actualizaciones y cambios en la Política de Cookies</h3>
         <p className="au-mb-3">
-          <span className="azul">JOYSWEETS</span> puede modificar esta Política de
-          Cookies en función de exigencias legislativas, reglamentarias, o con
-          la finalidad de adaptar dicha política a las instrucciones dictadas
-          por la Agencia Española de Protección de Datos, por ello se aconseja a
-          los Usuarios que la visiten periódicamente.
+          <span className="azul">JOYSWEETS</span> puede modificar esta Política
+          de Cookies en función de exigencias legislativas, reglamentarias, o
+          con la finalidad de adaptar dicha política a las instrucciones
+          dictadas por la Agencia Española de Protección de Datos, por ello se
+          aconseja a los Usuarios que la visiten periódicamente.
         </p>
       </div>
     </main>

@@ -13,8 +13,8 @@
   --light-chocolate: #a56f49;
   --point: #ffc803;
   --special: #f7afbe;
-  --light-special:#f5e2e6;
-  --input:#f9f2f4;
+  --light-special: #f5e2e6;
+  --input: #f9f2f4;
   --white: #fff;
 }
 
@@ -76,9 +76,9 @@
 /* Input */
 
 .joy {
-  padding: .5rem .75rem !important;
-  border: 1px solid rgba(0, 0, 0, .15) !important;
-  border-radius: .25rem;
+  padding: 0.5rem 0.75rem !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  border-radius: 0.25rem;
   margin: 0 !important;
   background-color: var(--input) !important;
 }
@@ -103,12 +103,12 @@
   color: var(--chocolate);
 }
 
-.blog a  {
+.blog a {
   color: var(--chocolate) !important;
 }
 
 .blog a:hover {
-  color:var(--special) !important;
+  color: var(--special) !important;
 }
 
 .aside a:hover {
@@ -116,11 +116,11 @@
 }
 
 .admin a {
-  color:var(--light-chocolate)
+  color: var(--light-chocolate);
 }
 
 .admin a:hover {
-  color:var(--chocolate)
+  color: var(--chocolate);
 }
 
 /* Texto seleccionado */
@@ -203,12 +203,16 @@
 
 /* Botones */
 
-.btn-primary, .btn-danger, .btn-success {
+.btn-primary,
+.btn-danger,
+.btn-success {
   background-color: var(--chocolate) !important;
   border: none !important;
 }
 
-.btn-primary:hover, .btn-danger:hover, .btn-success:hover {
+.btn-primary:hover,
+.btn-danger:hover,
+.btn-success:hover {
   background-color: var(--special) !important;
   border: none !important;
 }
@@ -222,17 +226,56 @@
 /* LegalPage, PrivacityPage, CookiesPage */
 
 main.legal span {
-  color:var(--blue)
+  color: var(--blue);
 }
 
 main .cookies {
-  color: var(--blue)
+  color: var(--blue);
 }
 
 main a.browser {
-  color: var(--blue)
+  color: var(--blue);
 }
 
 main a.browser:hover {
   text-decoration: underline;
+}
+
+/* NoFoundPage */
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-box {
+  width: 570px;
+  padding: 5% 0;
+}
+
+.error-box .footer {
+ margin-top: 2rem;
+}
+
+.error-box h1 {
+  font-size: 90px;
+  font-weight: 900;
+  line-height: 150px;
+  color: #ffc803;
+}
+
+.error-box .button-nofound button {
+  width: 50%;
+  height: 2.5rem;
+  color: var(--white);
+  background-color: var(--chocolate);
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.error-box .button-nofound button:hover {
+  color: var(--white);
+  background-color: var(--special);
+  border: none;
 }

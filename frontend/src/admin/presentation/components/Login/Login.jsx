@@ -62,7 +62,7 @@ export const Login = () => {
           </div>
         </form>
         <div className="footer-admin">
-          Copyright &copy; JOYSWEETS {fechaActual}
+          &copy; JOYSWEETS {fechaActual}
         </div>
       </div>
     </main>

@@ -22,7 +22,7 @@ export const Footer = () => {
           Política de Cookies
         </Link>
         <div className="copyright">
-          Copyright &copy; JOYSWEETS {fechaActual}
+          &copy; JOYSWEETS {fechaActual}
         </div>
       </div>
     </footer>

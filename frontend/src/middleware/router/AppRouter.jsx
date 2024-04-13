@@ -7,6 +7,7 @@ import { AdminRouter } from "../../admin/middleware/router/AdminRouter";
 import { PrivacityPage } from "../../presentation/pages/PrivacityPage";
 import { LegalPage } from "../../presentation/pages/LegalPage";
 import { CookiesPage } from "../../presentation/pages/CookiesPage";
+import { NoFoundPage } from "../../presentation/pages/NoFoundPage";
 
 export const AppRouter = () => {
   return (
@@ -21,6 +22,7 @@ export const AppRouter = () => {
           <Route path="/cookies" element={<CookiesPage />} />
         </Route>
         <Route path="/admin/*" element={<AdminRouter />} />
+        <Route path="/*" element={<NoFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

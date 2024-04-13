@@ -81,7 +81,7 @@ export const Register = () => {
           </div>
         </form>
         <div className="footer-admin">
-          Copyright &copy; JOYSWEETS {fechaActual}
+          &copy; JOYSWEETS {fechaActual}
         </div>
       </div>
     </main>
