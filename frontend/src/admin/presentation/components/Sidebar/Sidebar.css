@@ -42,3 +42,7 @@ aside {
 .aside .icon {
     margin-top: 1rem;
 }
+
+.aside .admin-profile {
+    margin-bottom: 3rem;
+}

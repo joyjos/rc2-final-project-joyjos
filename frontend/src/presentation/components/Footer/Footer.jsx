@@ -12,13 +12,13 @@ export const Footer = () => {
         <h5>Dulces Emociones</h5>
       </div>
       <div className="legal">
-        <Link to="/legal" target="_blank">
+        <Link to="/legal">
           Aviso legal
         </Link>
-        <Link to="/privacidad" target="_blank">
+        <Link to="/privacidad">
           Términos de Uso y Política de Privacidad
         </Link>
-        <Link to="/cookies" target="_blank">
+        <Link to="/cookies">
           Política de Cookies
         </Link>
         <div className="copyright">
