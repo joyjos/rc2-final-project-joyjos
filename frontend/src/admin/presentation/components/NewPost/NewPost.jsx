@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { PostContext } from "../../../../middleware/context/PostContext";
 import { Editor } from "../Editor/Editor";
 import { FileUpload } from 'primereact/fileupload';
+import Swal from 'sweetalert2';
 
 
 const initialFormData = {
@@ -68,6 +69,12 @@ export const NewPost = () => {
       setFormData(initialFormData);
       setSelectedImage(null);
       navigate("/admin/posts");
+      Swal.fire({
+        title: '¡Receta creada!',
+        text: formData.title,
+        icon: 'success',
+        confirmButtonText: 'Cerrar'
+      });
     }
   };
 

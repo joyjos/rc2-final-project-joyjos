@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { sort, truncate } from "../../../../helpers/utils";
 import ReactPaginate from "react-paginate";
 import { Searcher } from "../../../../presentation/components/Searcher/Searcher";
+import Swal from 'sweetalert2';
 
 export const Posts = () => {
   const { posts, deletePost } = useContext(PostContext);
@@ -40,22 +41,42 @@ export const Posts = () => {
   }, [updatedPosts]);
 
   const handleDeletePost = (id) => {
-    deletePost(id);
-    setUpdatedPosts(updatedPosts.filter((post) => post.id !== id));
+    Swal.fire({
+      title: "¿Estás seguro de que deseas eliminar esta receta?",
+      text: "Esta acción no se puede deshacer",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Sí, eliminar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deletePost(id);
+        console.log("Before deletion:", filteredPosts);
+        setFilteredPosts(filteredPosts.filter((post) => post.id !== id));
+        console.log("After deletion:", filteredPosts);
+        Swal.fire(
+          "Eliminada",
+          "La receta ha sido eliminada",
+          "success"
+        );
+      }
+    });
   };
 
-  const handleUpdatePost = async (updatedPost) => {
-    try {
-      await updatePost(updatedPost.id, updatedPost);
-      setUpdatedPosts(
-        updatedPosts.map((post) =>
-          post.id === updatedPost.id ? updatedPost : post
-        )
-      );
-    } catch (error) {
-      console.error("Error updating post:", error);
-    }
-  };
+  // const handleUpdatePost = async (updatedPost) => {
+  //   try {
+  //     await updatePost(updatedPost.id, updatedPost);
+  //     setUpdatedPosts(
+  //       updatedPosts.map((post) =>
+  //         post.id === updatedPost.id ? updatedPost : post
+  //       )
+  //     );
+  //   } catch (error) {
+  //     console.error("Error updating post:", error);
+  //   }
+  // };
 
   const showPagination =
     filteredPosts.length > 0 && filteredPosts.length > itemsPerPage;

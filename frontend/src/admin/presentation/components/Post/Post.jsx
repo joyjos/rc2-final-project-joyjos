@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { PostContext } from "../../../../middleware/context/PostContext";
 import { Editor } from "../Editor/Editor";
+import Swal from 'sweetalert2';
 
 export const Post = () => {
   const { id } = useParams();
@@ -45,6 +46,12 @@ export const Post = () => {
     try {
       await updatePost(id, formData);
       navigate("/admin/posts");
+      Swal.fire({
+        title: '¡Receta actualizada!',
+        text: formData.title,
+        icon: 'success',
+        confirmButtonText: 'Cerrar'
+      });
     } catch (error) {
       console.error("Error updating post:", error);
     }

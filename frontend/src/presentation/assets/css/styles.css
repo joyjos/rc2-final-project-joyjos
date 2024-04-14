@@ -1,10 +1,20 @@
-@font-face {
-  font-family: "Arvo";
-  src: local("Arvo"), url("Arvo-Bold.ttf") format("opentype") tech(color-COLRv1),
-    url("Arvo-BoldItalic.ttf") format("opentype"),
-    url("Arvo-Italic.ttf") format("opentype"),
-    url("Arvo-Regular.ttf") format("opentype");
-}
+/* @font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat-Regular.woff") format("opentype"),
+    url("Montserrat-Medium.woff") format("opentype"),
+    url("Montserrat-SemiBold.woff") format("opentype");
+} */
+
+/* @font-face {
+  font-family: "Lato";
+  src: url("Lato-Regular.ttf") format("opentype"),
+    url("Lato-Medium.ttf") format("opentype"),
+    url("Lato-Semibold.ttf") format("opentype");
+} */
+
+/* body {
+  font-family: 'Lato-Semibold' !important;
+} */
 
 :root {
   --blue: #197aaa;
@@ -87,8 +97,6 @@
   margin: 0 !important;
   background-color: var(--input) !important;
 }
-
-
 
 .file-input label {
   display: block;
@@ -275,7 +283,7 @@ main a.browser:hover {
 }
 
 .error-box .footer {
- margin-top: 2rem;
+  margin-top: 2rem;
 }
 
 .error-box h1 {
@@ -309,14 +317,14 @@ main a.browser:hover {
 
 .show-scrollTop {
   opacity: 1;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 /* Pagination */
 
 .pagination {
   justify-content: center;
-  gap:1rem;
+  gap: 1rem;
   margin-bottom: 4rem;
 }
 
@@ -325,7 +333,6 @@ main a.browser:hover {
   color: var(--white);
   padding: 0.5rem 1rem;
 }
-
 
 .pagination .page-item {
   display: block;
@@ -341,9 +348,27 @@ main a.browser:hover {
   color: var(--white) !important;
 }
 
-.previous, .next {
+.previous,
+.next {
   background-color: var(--chocolate);
   color: var(--white) !important;
   border: 1px solid #dee2e6;
   margin-right: 5px;
+}
+
+/* SweetAlert */
+
+.swal2-confirm {
+  background-color: var(--special) !important;
+  border-radius: 0 !important;
+}
+
+.swal2-confirm:focus {
+  box-shadow: none !important;
+}
+
+/* Admin inputs */
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.10rem var(--special) !important;
 }
