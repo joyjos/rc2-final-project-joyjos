@@ -11,7 +11,7 @@ export const Blog = () => {
   const itemsPerPage = 5;
 
   const pagesVisited = pageNumber * itemsPerPage;
-  const displayedPosts = posts.slice(
+  const displayedPosts = sort(posts).slice(
     pagesVisited,
     pagesVisited + itemsPerPage
   );
@@ -20,7 +20,7 @@ export const Blog = () => {
     <section className="ae-container-fluid rk-main blog-container animated fadeIn">
       <article className="ae-container-fluid ae-container-fluid--inner rk-blog">
         <div className="rk-blog__items">
-          {sort(displayedPosts).map((post) => (
+          {displayedPosts.map((post) => (
             <div key={post.id} className="rk-blog__item">
               <div
                 className="post-img post-1 rk-landscape-alt rk-tosquare"

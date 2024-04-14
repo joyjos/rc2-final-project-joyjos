@@ -3,7 +3,7 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 import { useState, useEffect, useContext } from "react";
 import { PostContext } from "../../../../middleware/context/PostContext";
 import { Link } from "react-router-dom";
-import { truncate } from "../../../../helpers/utils";
+import { sort, truncate } from "../../../../helpers/utils";
 import ReactPaginate from "react-paginate";
 
 export const Posts = () => {
@@ -15,7 +15,7 @@ export const Posts = () => {
   const itemsPerPage = 5;
 
   const pagesVisited = pageNumber * itemsPerPage;
-  const displayedPosts = updatedPosts.slice(
+  const displayedPosts = sort(updatedPosts).slice(
     pagesVisited,
     pagesVisited + itemsPerPage
   );
