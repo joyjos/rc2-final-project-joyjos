@@ -4,15 +4,29 @@ import { useState, useEffect, useContext } from "react";
 import { PostContext } from "../../../../middleware/context/PostContext";
 import { Link } from "react-router-dom";
 import { truncate } from "../../../../helpers/utils";
+import ReactPaginate from "react-paginate";
 
 export const Posts = () => {
   const { posts, deletePost } = useContext(PostContext);
 
   const [updatedPosts, setUpdatedPosts] = useState(posts);
 
+  const [pageNumber, setPageNumber] = useState(0);
+  const itemsPerPage = 5;
+
+  const pagesVisited = pageNumber * itemsPerPage;
+  const displayedPosts = updatedPosts.slice(
+    pagesVisited,
+    pagesVisited + itemsPerPage
+  );
+
   useEffect(() => {
     setUpdatedPosts(posts);
   }, [posts]);
+
+  useEffect(() => {
+    setPageNumber(0);
+  }, [updatedPosts]);
 
   const handleDeletePost = (id) => {
     deletePost(id);
@@ -22,7 +36,11 @@ export const Posts = () => {
   const handleUpdatePost = async (updatedPost) => {
     try {
       await updatePost(updatedPost.id, updatedPost);
-      setUpdatedPosts(updatedPosts.map(post => post.id === updatedPost.id ? updatedPost : post));
+      setUpdatedPosts(
+        updatedPosts.map((post) =>
+          post.id === updatedPost.id ? updatedPost : post
+        )
+      );
     } catch (error) {
       console.error("Error updating post:", error);
     }
@@ -30,7 +48,6 @@ export const Posts = () => {
 
   return (
     <main className="row container-posts animated fadeIn">
-     
       <div className="row">
         <div className="col-12">
           <div className="card">
@@ -59,7 +76,7 @@ export const Posts = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {updatedPosts.map((post) => (
+                  {displayedPosts.map((post) => (
                     <tr key={post.id}>
                       <td>{post.title}</td>
                       <td>{post.category}</td>
@@ -100,6 +117,19 @@ export const Posts = () => {
           </div>
         </div>
       </div>
+      <ReactPaginate
+        previousLabel={"Anterior"}
+        nextLabel={"Siguiente"}
+        pageCount={Math.ceil(updatedPosts.length / itemsPerPage)}
+        onPageChange={(selected) => {
+          setPageNumber(selected.selected);
+        }}
+        containerClassName={"pagination"}
+        previousClassName={"previous"}
+        nextClassName={"next"}
+        pageClassName={"page-item"}
+        activeClassName={"active"}
+      />
     </main>
   );
 };

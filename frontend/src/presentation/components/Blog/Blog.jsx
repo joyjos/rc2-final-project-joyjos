@@ -1,16 +1,26 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { PostContext } from "../../../middleware/context/PostContext";
 import { formatDate, sort, truncate, titlecase } from "../../../helpers/utils";
+import ReactPaginate from "react-paginate";
 
 export const Blog = () => {
   const { posts } = useContext(PostContext);
 
+  const [pageNumber, setPageNumber] = useState(0);
+  const itemsPerPage = 5;
+
+  const pagesVisited = pageNumber * itemsPerPage;
+  const displayedPosts = posts.slice(
+    pagesVisited,
+    pagesVisited + itemsPerPage
+  );
+
   return (
-    <section className="ae-container-fluid rk-main blog animated fadeIn">
+    <section className="ae-container-fluid rk-main blog-container animated fadeIn">
       <article className="ae-container-fluid ae-container-fluid--inner rk-blog">
         <div className="rk-blog__items">
-          {sort(posts).map((post) => (
+          {sort(displayedPosts).map((post) => (
             <div key={post.id} className="rk-blog__item">
               <div
                 className="post-img post-1 rk-landscape-alt rk-tosquare"
@@ -18,7 +28,7 @@ export const Blog = () => {
               >
                 <div className="item-meta">
                   <p>
-                    <Link to={`/post/${post.id}`} className="arrow-button">
+                    <Link to={`/post/${post.id}`} className="arrow-button blog">
                       Continuar Leyendo
                       <span className="arrow-cont">
                         <svg>
@@ -31,7 +41,7 @@ export const Blog = () => {
               </div>
               <div className="blog-info">
                 <h2 className="blog-info__title">
-                  <Link to={`/post/${post.id}`}>{post.title}</Link>
+                  <Link to={`/post/${post.id}`} className="blog">{post.title}</Link>
                 </h2>
                 <p
                   className="blog-info__excerpt"
@@ -48,7 +58,7 @@ export const Blog = () => {
                 </span>
                 <Link
                   to={`/post/${post.id}`}
-                  className="arrow-button blog-meta__read-more"
+                  className="arrow-button blog-meta__read-more blog"
                 >
                   Continuar Leyendo
                   <span className="arrow-cont">
@@ -62,6 +72,19 @@ export const Blog = () => {
           ))}
         </div>
       </article>
+      <ReactPaginate
+        previousLabel={"Anterior"}
+        nextLabel={"Siguiente"}
+        pageCount={Math.ceil(posts.length / itemsPerPage)}
+        onPageChange={(selected) => {
+          setPageNumber(selected.selected);
+        }}
+        containerClassName={"pagination"}
+        previousClassName={"previous"}
+        nextClassName={"next"}
+        pageClassName={"page-item"}
+        activeClassName={"active"}
+      />
     </section>
   );
 };

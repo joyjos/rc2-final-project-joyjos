@@ -7,7 +7,7 @@ export const Sidebar = () => {
   return (
     <aside>
       <div className="aside">
-        <button>Mi cuenta</button>
+        <Link to="/admin/profile"><button>Mi cuenta</button></Link>
         <Link to="/admin/posts"><button>Recetas</button></Link>
         <Link to="/admin/post"><button>Crear receta</button></Link>
         <Link to="/">

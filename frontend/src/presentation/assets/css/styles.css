@@ -83,14 +83,7 @@
   background-color: var(--input) !important;
 }
 
-input[type=file] {
-  background-color: var(--special);
-  display: none;
-  width: 0.1px;
-  height: 0.1px;
-  position: absolute;
-  left: -99999rem;
-}
+
 
 .file-input label {
   display: block;
@@ -127,11 +120,11 @@ input[type=file] {
   color: var(--chocolate);
 }
 
-.blog a {
+.blog-container a.blog {
   color: var(--chocolate) !important;
 }
 
-.blog a:hover {
+.blog-container a.blog:hover {
   color: var(--special) !important;
 }
 
@@ -312,4 +305,40 @@ main a.browser:hover {
 .show-scrollTop {
   opacity: 1;
   transition: all .2s ease-in-out;
+}
+
+/* Pagination */
+
+.pagination {
+  justify-content: center;
+  gap:1rem;
+  margin-bottom: 4rem;
+}
+
+.pagination a {
+  display: inline-block;
+  color: var(--white);
+  padding: 0.5rem 1rem;
+}
+
+
+.pagination .page-item {
+  display: block;
+}
+
+.pagination .page-item {
+  color: var(--chocolate) !important;
+}
+
+.pagination .active {
+  background-color: var(--special) !important;
+  border-color: var(--special) !important;
+  color: var(--white) !important;
+}
+
+.previous, .next {
+  background-color: var(--chocolate);
+  color: var(--white) !important;
+  border: 1px solid #dee2e6;
+  margin-right: 5px;
 }
