@@ -222,7 +222,7 @@
   background-color: var(--chocolate) !important;
   border: none !important;
   width: 20rem;
-  border-radius: none !important;
+  border-radius: 0 !important;
 }
 
 .btn-primary:hover,

@@ -5,17 +5,28 @@ import { PostContext } from "../../../../middleware/context/PostContext";
 import { Link } from "react-router-dom";
 import { sort, truncate } from "../../../../helpers/utils";
 import ReactPaginate from "react-paginate";
+import { Searcher } from "../../../../presentation/components/Searcher/Searcher";
 
 export const Posts = () => {
   const { posts, deletePost } = useContext(PostContext);
 
   const [updatedPosts, setUpdatedPosts] = useState(posts);
 
+  const [searchTerm, setSearchTerm] = useState("");
+  const onSearchTermChange = (newTerm) => {
+    setSearchTerm(newTerm);
+    setPageNumber(0);
+  };
+
+  const filteredPosts = posts?.filter((post) =>
+    post.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   const [pageNumber, setPageNumber] = useState(0);
   const itemsPerPage = 5;
 
   const pagesVisited = pageNumber * itemsPerPage;
-  const displayedPosts = sort(updatedPosts).slice(
+  const displayedPosts = sort(filteredPosts).slice(
     pagesVisited,
     pagesVisited + itemsPerPage
   );
@@ -46,17 +57,24 @@ export const Posts = () => {
     }
   };
 
+  const showPagination =
+    filteredPosts.length > 0 && filteredPosts.length > itemsPerPage;
+
   return (
     <main className="row container-posts animated fadeIn">
       <div className="row">
         <div className="col-12">
           <div className="card">
             <div className="card-body">
+              <Searcher
+                searchTerm={searchTerm}
+                onSearchTermChange={onSearchTermChange}
+              />
               <div className="text-right">
                 <Link to="/admin/post">
                   <button
                     type="button"
-                    className="btn waves-effect waves-light btn-primary"
+                    className="btn btn-primary"
                   >
                     Crear Receta
                   </button>
@@ -117,19 +135,21 @@ export const Posts = () => {
           </div>
         </div>
       </div>
-      <ReactPaginate
-        previousLabel={"Anterior"}
-        nextLabel={"Siguiente"}
-        pageCount={Math.ceil(updatedPosts.length / itemsPerPage)}
-        onPageChange={(selected) => {
-          setPageNumber(selected.selected);
-        }}
-        containerClassName={"pagination"}
-        previousClassName={"previous"}
-        nextClassName={"next"}
-        pageClassName={"page-item"}
-        activeClassName={"active"}
-      />
+      {showPagination && (
+        <ReactPaginate
+          previousLabel={"Anterior"}
+          nextLabel={"Siguiente"}
+          pageCount={Math.ceil(filteredPosts.length / itemsPerPage)}
+          onPageChange={(selected) => {
+            setPageNumber(selected.selected);
+          }}
+          containerClassName={"pagination"}
+          previousClassName={"previous"}
+          nextClassName={"next"}
+          pageClassName={"page-item"}
+          activeClassName={"active"}
+        />
+      )}
     </main>
   );
 };
