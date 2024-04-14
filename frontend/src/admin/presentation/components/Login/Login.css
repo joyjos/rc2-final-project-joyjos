@@ -79,10 +79,9 @@ input[type=password] {
 .p-button {
   width: 100%;
   padding: 0.5rem;
-  border-radius: 4px;
   background-color: var(--chocolate);
   color: var(--white);
-  border: 1px solid var(--light-special) !important;
+  border: none;
   font-size: 1rem;
   cursor: pointer;
   transition: background-color .3s;
@@ -91,6 +90,7 @@ input[type=password] {
 .p-button:hover {
   background-color: var(--special);
   color: var(--white);
+  border: none !important; 
 }
 
 .remember-container {

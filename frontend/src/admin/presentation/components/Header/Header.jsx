@@ -1,6 +1,6 @@
 import "./Header.css";
 import { Link } from 'react-router-dom'
-import { FaSignOutAlt } from "react-icons/fa";
+import { RiLogoutCircleRLine } from "react-icons/ri";
 
 import logo from "../../../../presentation/assets/img/JOYSWEETS.svg";
 
@@ -19,7 +19,7 @@ export const Header = () => {
           Hola <strong>Jose</strong>
         </span>
         <Link to="/">
-          <FaSignOutAlt size={20} />
+          <RiLogoutCircleRLine size={30} title="Log Out" />
         </Link>
       </div>
     </header>

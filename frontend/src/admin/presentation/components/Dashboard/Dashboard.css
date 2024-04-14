@@ -14,10 +14,11 @@
 .dashboard button {
     width:17rem;
     height: 3rem;
-    background-color: var(--chocolate);
+    background-color: var(--white);
     border-color: var(--chocolate);
     color: var(--special);
     border: none;
+    border: 1px solid var(--chocolate);
     margin: 0.5rem;
     font-size: 1.5rem;
     text-transform: uppercase;

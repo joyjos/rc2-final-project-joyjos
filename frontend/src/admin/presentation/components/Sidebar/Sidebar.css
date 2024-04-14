@@ -1,5 +1,5 @@
 aside {
-    background-color: var(--chocolate);
+    
     width: 12rem;
     height: 88.5vh;
     color: var(--special);
@@ -20,14 +20,25 @@ aside {
     color:var(--light-special);
 }
 
-.aside a {
-    color:var(--light-special);
+.aside button {
+    width: 10rem;
+    height: 2.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--chocolate);
+    color: var(--white);
+    border: none;
+    text-transform:uppercase ;
+    transition: background-color 0.3s ease;
 }
 
-.aside a:hover {
+.aside button:hover {
+    background-color: var(--special);
+}
+
+.aside a {
     color:var(--special);
 }
 
 .aside .icon {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }

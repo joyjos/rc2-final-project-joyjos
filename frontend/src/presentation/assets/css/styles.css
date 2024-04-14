@@ -83,6 +83,30 @@
   background-color: var(--input) !important;
 }
 
+input[type=file] {
+  background-color: var(--special);
+  display: none;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+  left: -99999rem;
+}
+
+.file-input label {
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(40deg, #ff6ec4, #7873f5);
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+}
+
 /* Cursor */
 
 .pointer {
@@ -116,10 +140,6 @@
 }
 
 .admin a {
-  color: var(--light-chocolate);
-}
-
-.admin a:hover {
   color: var(--chocolate);
 }
 
@@ -208,6 +228,8 @@
 .btn-success {
   background-color: var(--chocolate) !important;
   border: none !important;
+  width: 20rem;
+  border-radius: none !important;
 }
 
 .btn-primary:hover,
@@ -220,7 +242,7 @@
 /* Card */
 
 .card {
-  border: none;
+  border: none !important;
 }
 
 /* LegalPage, PrivacityPage, CookiesPage */
