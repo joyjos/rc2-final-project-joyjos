@@ -73,16 +73,27 @@ public class PostController {
         }
     }
 
-    @PatchMapping("/{id}")
-    public ResponseEntity<PostResponse> updatePost(@PathVariable UUID id, @RequestBody PostRequest postRequest) {
-        Optional<PostResponse> optionalPostResponse = postService.updatePost(id, postRequest);
+    // @PatchMapping("/{id}")
+    // public ResponseEntity<PostResponse> updatePost(@PathVariable UUID id, @RequestBody PostRequest postRequest) {
+    //     Optional<PostResponse> optionalPostResponse = postService.updatePost(id, postRequest);
 
-        if (optionalPostResponse.isPresent()) {
-            return ResponseEntity.ok(optionalPostResponse.get());
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    //     if (optionalPostResponse.isPresent()) {
+    //         return ResponseEntity.ok(optionalPostResponse.get());
+    //     } else {
+    //         return ResponseEntity.notFound().build();
+    //     }
+    // }
+
+    @PatchMapping("/{id}")
+public ResponseEntity<PostResponse> updatePost(@PathVariable UUID id, @ModelAttribute PostRequest postRequest, @RequestParam("file") MultipartFile file) {
+    Optional<PostResponse> optionalPostResponse = postService.updatePost(id, postRequest, file);
+
+    if (optionalPostResponse.isPresent()) {
+        return ResponseEntity.ok(optionalPostResponse.get());
+    } else {
+        return ResponseEntity.notFound().build();
     }
+}
 
     @DeleteMapping("/{id}")
     public ResponseEntity<PostResponse> deletePost(@PathVariable UUID id) {
