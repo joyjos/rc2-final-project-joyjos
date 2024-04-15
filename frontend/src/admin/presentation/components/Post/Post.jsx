@@ -198,8 +198,9 @@ export const Post = () => {
                       />
                     </div>
                     <div className="form-group flexar">
-                      <label>Cambiar foto</label>
+                      <label for="file-input" className="custom-file-upload">Cambiar foto</label>
                       <input
+                      id="file-input"
                         type="file"
                         name="file"
                         onChange={handleImageChange}
@@ -211,7 +212,7 @@ export const Post = () => {
                             alt="Imagen seleccionada"
                             style={{ maxWidth: "100px" }}
                           />
-                          <button onClick={handleImageRemove}>Eliminar</button>
+                          <button className="btn-delete-upload" onClick={handleImageRemove}>Eliminar</button>
                         </div>
                       )}
                     </div>
@@ -219,7 +220,7 @@ export const Post = () => {
                       <button type="submit" className="btn btn-success m-r-10">
                         Guardar
                       </button>
-                      <Link to="/admin/posts" className="btn btn-inverse">
+                      <Link to="/admin/posts" className="btn-delete-upload">
                         Cancelar
                       </Link>
                     </div>

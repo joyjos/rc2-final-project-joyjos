@@ -370,11 +370,11 @@ main a.browser:hover {
 /* Admin inputs */
 
 .form-control:focus {
-  box-shadow: 0 0 0 0.10rem var(--special) !important;
+  box-shadow: 0 0 0 0.1rem var(--special) !important;
 }
 
 .p-button:focus {
-  box-shadow: none !important
+  box-shadow: none !important;
 }
 
 .p-checkbox-box {
@@ -395,6 +395,35 @@ main a.browser:hover {
   background: none !important;
 } */
 
+/* Custom */
+input[type="file"] {
+  display: none;
+}
+
+/* Estilo para el botón personalizado */
+.custom-file-upload {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--special);
+  color: var(--chocolate);
+  border: none;
+  cursor: pointer;
+  margin: 2rem 0;
+  width: 12.8rem;
+}
+
+.btn-delete-upload {
+  background-color: var(--light-special);
+  color: var(--light-chocolate);
+  border: none;
+  margin-left: 2rem;
+  padding: 0.3rem 1.5rem 0.7rem;
+}
+
+.btn-delete-upload:hover {
+  color:var(--chocolate)
+}
+
 .flexar {
   display: flex;
   flex-direction: column;
@@ -402,6 +431,4 @@ main a.browser:hover {
 
 .guardar {
   margin: 2rem 0;
-  text-align: center;
 }
-
