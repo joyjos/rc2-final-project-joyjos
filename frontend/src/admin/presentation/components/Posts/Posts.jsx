@@ -33,17 +33,19 @@ export const Posts = () => {
   );
 
   useEffect(() => {
+    console.log("Efecto 1: Actualización de posts");
     setUpdatedPosts(posts);
   }, [posts]);
 
   useEffect(() => {
+    console.log("Efecto 2: Actualización de updatedPosts");
     setPageNumber(0);
   }, [updatedPosts]);
 
   const handleDeletePost = (id) => {
     Swal.fire({
       title: "¿Estás seguro de que deseas eliminar esta receta?",
-      text: "Esta acción no se puede deshacer",
+      html: '<span style="color:var(--chocolate); text-decoration:underline; text-decoration-color: var(--special)">'+posts.find(post => post.id === id).title+'</span>',
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#d33",
@@ -53,9 +55,11 @@ export const Posts = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         deletePost(id);
-        console.log("Before deletion:", filteredPosts);
-        setFilteredPosts(filteredPosts.filter((post) => post.id !== id));
-        console.log("After deletion:", filteredPosts);
+        console.log("ID del post a eliminar:", id);
+      console.log("Posts después de eliminar:", posts);
+      const updatedPostsAfterDeletion = posts.filter((post) => post.id !== id);
+      console.log("Updated posts después de eliminar:", updatedPostsAfterDeletion);
+      setUpdatedPosts(updatedPostsAfterDeletion);
         Swal.fire(
           "Eliminada",
           "La receta ha sido eliminada",

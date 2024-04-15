@@ -1,11 +1,10 @@
 import "./NewPost.css";
 import { useState, useContext } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom";
 import { PostContext } from "../../../../middleware/context/PostContext";
 import { Editor } from "../Editor/Editor";
-import { FileUpload } from 'primereact/fileupload';
-import Swal from 'sweetalert2';
-
+import { FileUpload } from "primereact/fileupload";
+import Swal from "sweetalert2";
 
 const initialFormData = {
   title: "",
@@ -70,10 +69,13 @@ export const NewPost = () => {
       setSelectedImage(null);
       navigate("/admin/posts");
       Swal.fire({
-        title: '¡Receta creada!',
-        text: formData.title,
-        icon: 'success',
-        confirmButtonText: 'Cerrar'
+        title: "¡Receta creada!",
+        html:
+          '<span style="color:var(--chocolate); text-decoration:underline; text-decoration-color: var(--special)">' +
+          formData.title +
+          "</span>",
+        icon: "success",
+        confirmButtonText: "Cerrar",
       });
     }
   };
@@ -124,7 +126,7 @@ export const NewPost = () => {
                       onChange={handleContentChange}
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="form-group flexar">
                     <label>Elige una foto</label>
                     <input
                       type="file"
@@ -133,23 +135,23 @@ export const NewPost = () => {
                     />
                     {selectedImage && (
                       <div>
-                        <img src={selectedImage} alt="Imagen seleccionada" style={{ maxWidth: "100px" }} />
+                        <img
+                          src={selectedImage}
+                          alt="Imagen seleccionada"
+                          style={{ maxWidth: "100px" }}
+                        />
                         <button onClick={handleImageRemove}>Eliminar</button>
                       </div>
                     )}
                   </div>
-                  <button
-                    type="submit"
-                    className="btn btn-success waves-effect waves-light m-r-10"
-                  >
-                    <i className="fa fa-save"></i> Guardar
-                  </button>
-                  <a
-                    href="/admin/posts"
-                    className="btn btn-inverse waves-effect waves-light"
-                  >
-                    Cancelar
-                  </a>
+                  <div className="guardar">
+                    <button type="submit" className="btn btn-success m-r-10">
+                      Guardar
+                    </button>
+                    <Link to="/admin/posts" className="btn btn-inverse">
+                      Cancelar
+                    </Link>
+                  </div>
                 </form>
               </div>
             </div>

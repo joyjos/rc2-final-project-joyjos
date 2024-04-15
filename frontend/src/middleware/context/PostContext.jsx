@@ -46,6 +46,7 @@ export const PostProvider = ({ children }) => {
     const updatePost = async (id, updatedPost) => {
       try {
         const savedPost = await postService.updatePost(id, updatedPost);
+        setPosts((prevPosts) => prevPosts.map(post => post.id === id ? savedPost : post));
         setSavedPost(savedPost);
       } catch (error) {
         console.error("Error saving post", error);
@@ -54,8 +55,8 @@ export const PostProvider = ({ children }) => {
 
     const deletePost = async (id) => {
       try {
-        const deletedPost = await postService.deletePost(id);
-        setDeletedPost(deletedPost);
+        await postService.deletePost(id);
+        setPosts((prevPosts) => prevPosts.filter(post => post.id !== id));
       } catch (error) {
         console.error("Error deleting post", error);
       }

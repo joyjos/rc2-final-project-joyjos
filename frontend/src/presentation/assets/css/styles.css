@@ -395,3 +395,13 @@ main a.browser:hover {
   background: none !important;
 } */
 
+.flexar {
+  display: flex;
+  flex-direction: column;
+}
+
+.guardar {
+  margin: 2rem 0;
+  text-align: center;
+}
+

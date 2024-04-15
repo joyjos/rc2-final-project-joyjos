@@ -118,12 +118,29 @@ public class PostService {
 
         if (optionalPost.isPresent()) {
             Post postToDelete = optionalPost.get();
+
+            // Obtener la referencia de la imagen asociada al post
+            String imageFileName = postToDelete.getImage();
+
+            // Eliminar el post de la base de datos
             postRepository.delete(postToDelete);
 
+            // Verificar y eliminar la imagen asociada si existe
+            if (imageFileName != null && Files.exists(Paths.get("uploads", imageFileName))
+                    && Files.isRegularFile(Paths.get("uploads", imageFileName))) {
+                try {
+                    Files.delete(Paths.get("uploads", imageFileName));
+                } catch (IOException e) {
+                    throw new RuntimeException("Error al eliminar la imagen asociada al post", e);
+                }
+            }
+
+            // Devolver la respuesta del post eliminado
             return Optional.of(new PostResponse(postToDelete.getId(), postToDelete.getTitle(), postToDelete.getPost(),
                     postToDelete.getImage(), postToDelete.getCategory(), postToDelete.getDatePost()));
         }
 
         return Optional.empty();
     }
+
 }
