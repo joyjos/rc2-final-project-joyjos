@@ -15,7 +15,7 @@ export const Blog = () => {
   };
 
   const filteredPosts = posts?.filter((post) =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase())
+    post.title.toLowerCase().includes(searchTerm.toLowerCase()) || post.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const [pageNumber, setPageNumber] = useState(0);

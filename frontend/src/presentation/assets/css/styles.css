@@ -372,3 +372,26 @@ main a.browser:hover {
 .form-control:focus {
   box-shadow: 0 0 0 0.10rem var(--special) !important;
 }
+
+.p-button:focus {
+  box-shadow: none !important
+}
+
+.p-checkbox-box {
+  box-shadow: none !important;
+}
+
+.p-checkbox-box:hover {
+  border-color: var(--special) !important;
+}
+
+.p-inputtext:enabled:hover {
+  border-color: none !important;
+}
+
+/* input[type=text] {
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+} */
+

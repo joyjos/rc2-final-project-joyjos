@@ -8,7 +8,7 @@ export const Searcher = ({ searchTerm, onSearchTermChange }) => {
     <input
       className='searcher'
       type='text'
-      placeholder='Buscar receta'
+      placeholder='Busca tu receta'
       value={searchTerm}
       onChange={(e) => onSearchTermChange(e.target.value)}
       
