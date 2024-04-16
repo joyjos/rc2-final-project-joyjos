@@ -19,12 +19,12 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 # A RESTful API built with Spring Boot consumed by a FrontEnd built in React
 
 ## Table of Content
-### [01 Languages and Technologies](https://github.com/FactoriaF5Code/rc2-final-project-joyjos#01-languages-and-technologies)
-### [02 Requirements](https://github.com/FactoriaF5Code/rc2-final-project-joyjos#02-requirements)
-### [03 Installation](https://github.com/FactoriaF5Code/rc2-final-project-joyjos#03installation)
+-  [01 Languages and Technologies](#section-01)
+-  [02 Requirements](#section-02)
+-  [03 Installation](#section-03)
 
-<a name="item1"></a>
-## 01 Languages and Technologies
+<a id="section_01"></a>
+## *01 Languages and Technologies*
 ### FrontEnd
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -52,8 +52,8 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
 
-<a name="item2"></a>
-## 02 Requirements
+<a id="section_02"></a>
+## *02 Requirements*
 - Having Java 17 installed  
     You can download it from [Oracle's website](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)  
 - Having Node.js installed  
@@ -61,8 +61,8 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 - Having PostgreSQL DataBase installed  
     Install PostgreSQL from [PostgreSQL's website](https://www.postgresql.org/download/)
 
-<a name="item3"></a>
-## 03 Installation
+<a id="section_03"></a>
+## *03 Installation*
 ### BackEnd
 A PostgreSQL database is needed, according to the configuration of `src/main/resources/application.properties`
 - Go into the `backend` folder:
