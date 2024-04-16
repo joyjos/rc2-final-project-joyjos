@@ -19,9 +19,11 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 # A RESTful API built with Spring Boot consumed by a FrontEnd built in React
 
 ## Table of Content
--  [01 Languages and Technologies](#section_01)
--  [02 Requirements](#section_02)
--  [03 Installation](#section_03)
+-  [*01 Languages and Technologie*s](#section_01)
+-  [*02 Requirements*](#section_02)
+-  [*03 Installation*](#section_03)
+  
+<br>
 
 <a id="section_01"></a>
 ## *01 Languages and Technologies*
@@ -52,6 +54,10 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
 
+<a class="top-link hide" href="#top">↑</a>
+<a name="top"></a>
+<br>
+
 <a id="section_02"></a>
 ## *02 Requirements*
 - Having Java 17 installed  
@@ -60,6 +66,8 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
     You can download it from [Node.js's website](https://nodejs.org/en/download/)  
 - Having PostgreSQL DataBase installed  
     Install PostgreSQL from [PostgreSQL's website](https://www.postgresql.org/download/)
+
+  <br>
 
 <a id="section_03"></a>
 ## *03 Installation*
