@@ -6,7 +6,7 @@
 
 # JOY SWEETS :: Dulces Emociones
 
-JOY SWEETS es una deliciosa colección de recetas dulces.
+**JOY SWEETS** es una deliciosa colección de recetas dulces.
 
 En mi aplicación, encontrarás una gran variedad de recetas que he creado con mucho amor y dedicación, para que puedas disfrutar de deliciosos postres en la comodidad de tu hogar.
 
@@ -14,10 +14,17 @@ Desde pasteles, tartas, galletas y mucho más, en mi aplicación encontrarás re
 
 Además, cada receta viene acompañada de pasos detallados, para que puedas seguirlas fácilmente y obtener los mejores resultados.
 
-¡Te espero en JOY SWEETS!
+¡Te espero en **JOY SWEETS**!
 
 # A RESTful API built with Spring Boot consumed by a FrontEnd built in React
-## Languages and Technologies
+
+## Table of Content
+### [01 Languages and Technologies](https://github.com/FactoriaF5Code/rc2-final-project-joyjos#01-languages-and-technologies)
+### [02 Requirements](https://github.com/FactoriaF5Code/rc2-final-project-joyjos#02-requirements)
+### [03 Installation](https://github.com/FactoriaF5Code/rc2-final-project-joyjos#03installation)
+
+<a name="item1"></a>
+## 01 Languages and Technologies
 ### FrontEnd
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -45,21 +52,49 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
 
-## Cómo lanzar el proyecto
+<a name="item2"></a>
+## 02 Requirements
+- Having Java 17 installed  
+    You can download it from [Oracle's website](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)  
+- Having Node.js installed  
+    You can download it from [Node.js's website](https://nodejs.org/en/download/)  
+- Having PostgreSQL DataBase installed  
+    Install PostgreSQL from [PostgreSQL's website](https://www.postgresql.org/download/)
 
-### Frontend
+<a name="item3"></a>
+## 03 Installation
+### BackEnd
+A PostgreSQL database is needed, according to the configuration of `src/main/resources/application.properties`
+- Go into the `backend` folder:
+  
+  ~~~
+  cd backend
+  ~~~
+- Build the project using Maven:
+ 
+  ~~~
+  mvn clean install
+  ~~~
+- Run the Spring Boot application:
+ 
+  ~~~
+  mvn spring-boot:run
+  ~~~
 
-```
-cd frontend
-npm install 
-npm run dev
-```
+### FrontEnd
+- Go into the `frontend` folder:
+  
+  ~~~
+  cd frontend
+  ~~~
+- Install `node_modules`:
+  
+  ~~~
+  npm install
+  ~~~
+- Run the React application:
+  
+  ~~~
+  npm run dev
+  ~~~
 
-### Backend
-
-Necesitamos una base de datos postgres, de acuerdo con la configuración de `src/main/resources/application.properties`
-
-```
-cd backend
-mvn spring-boot:run
-```
