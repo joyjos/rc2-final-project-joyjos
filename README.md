@@ -19,9 +19,9 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 # A RESTful API built with Spring Boot consumed by a FrontEnd built in React
 
 ## Table of Content
--  [01 Languages and Technologies](#section-01)
--  [02 Requirements](#section-02)
--  [03 Installation](#section-03)
+-  [01 Languages and Technologies](#section_01)
+-  [02 Requirements](#section_02)
+-  [03 Installation](#section_03)
 
 <a id="section_01"></a>
 ## *01 Languages and Technologies*
