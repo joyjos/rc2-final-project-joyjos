@@ -5,9 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
-import org.factoriaf5.backend.controllers.roles.RoleRequest;
 import org.factoriaf5.backend.controllers.users.UserRequest;
 import org.factoriaf5.backend.controllers.users.UserResponse;
 import org.factoriaf5.backend.persistence.roles.Role;
