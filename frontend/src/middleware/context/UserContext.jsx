@@ -5,6 +5,8 @@ export const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
     const [users, setUsers] = useState([]);
+    const [user, setUser] = useState(null);
+    const [selectedUser, setSelectedUser] = useState(null);
     const [userRoles, setUserRoles] = useState({});
 
     const userService = new UserService();
@@ -21,6 +23,15 @@ export const UserProvider = ({ children }) => {
       fetchUsers();
     }, []);
 
+    const getUserById = async (id) => {
+      try {
+        const user = await userService.getUserById(id);
+        setSelectedUser(user);
+      } catch (error) {
+        console.error("Error fetching user by id:", error);
+      }
+    };
+
     const getUserRoles = async (id) => {
         try {
           const userRolesData = await userService.getUserRoles(id);
@@ -30,8 +41,19 @@ export const UserProvider = ({ children }) => {
         }
       };
 
+      const createUser = async (userData) => {
+        try {
+          const createdUser = await userService.createUser(userData);
+          setUser(createdUser);
+          return createdUser;
+        } catch (error) {
+          console.error('Error al crear el usuario:', error);
+          throw error;
+        }
+      };
+
     return (
-        <UserContext.Provider value={{ users, getUserRoles, userRoles }}>
+        <UserContext.Provider value={{ users, selectedUser, getUserRoles, userRoles, createUser }}>
           {children}
         </UserContext.Provider>
       );

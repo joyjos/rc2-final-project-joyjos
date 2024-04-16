@@ -400,7 +400,8 @@ input[type="file"] {
   display: none;
 }
 
-/* Estilo para el botón personalizado */
+/* Custom file-upload */
+
 .custom-file-upload {
   display: inline-block;
   padding: 10px 20px;

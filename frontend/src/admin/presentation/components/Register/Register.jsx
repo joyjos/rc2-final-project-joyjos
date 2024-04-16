@@ -1,28 +1,54 @@
 import "./Register.css";
 import logo from "../../../../presentation/assets/img/JOYSWEETS.svg";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { InputText } from "primereact/inputtext";
 import { Password } from "primereact/password";
 import { Button } from "primereact/button";
 import { Checkbox } from "primereact/checkbox";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { UserContext } from '../../../../middleware/context/UserContext';
+import Swal from "sweetalert2";
 
 const fechaActual = new Date().getFullYear();
 
 export const Register = () => {
+
+  const { createUser } = useContext(UserContext); 
+
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [accept, setAccept] = useState(false);
 
-  const handleSubmit = (event) => {
+  const handleCreateUser = async (event) => {
     event.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("First Name:", firstName);
-    console.log("Last Name:", lastName);
-    console.log("Accept:", accept);
+
+    const userData = {
+      firstName,
+      lastName,
+      email,
+      password
+    };
+
+    try {
+      const createdUser = await createUser(userData);
+      console.log('Usuario creado:', createdUser);
+      navigate("/admin/");
+      Swal.fire({
+        title: "¡Usuario creado!",
+        html:
+          '<span style="color:var(--chocolate); text-decoration:underline; text-decoration-color: var(--special)">' +
+          firstName +
+          "</span>",
+        icon: "success",
+        confirmButtonText: "Cerrar",
+      });
+    } catch (error) {
+      console.error('Error al crear el usuario:', error);
+    }
   };
 
   return (
@@ -30,7 +56,7 @@ export const Register = () => {
       <div className="admin-container">
         <img src={logo} width="70" height="70" alt="JOYSWEETS" />
         <h1>Inscribirse</h1>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleCreateUser}>
           <div className="p-float-label">
             <InputText
               id="firstName"
