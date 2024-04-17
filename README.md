@@ -3,7 +3,7 @@
 
 ![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/JOYSWEETS.png)
 
-<a name="top"></a>
+
 # JOY SWEETS :: Dulces Emociones
 
 **JOY SWEETS** es una deliciosa colección de recetas dulces.
@@ -15,7 +15,7 @@ Desde pasteles, tartas, galletas y mucho más, en mi aplicación encontrarás re
 Además, cada receta viene acompañada de pasos detallados, para que puedas seguirlas fácilmente y obtener los mejores resultados.
 
 ¡Te espero en **JOY SWEETS**!
-
+<a name="top"></a>
 # A RESTful API built with Spring Boot consumed by a FrontEnd built in React
 
 ## Table of Content
@@ -26,7 +26,7 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 <br>
 
 <a id="section_01"></a>
-## <span style="color:red">*01 Languages and Technologies*</span>
+## *01 Languages and Technologies*
 ### FrontEnd
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -55,7 +55,6 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
 
 <a class="top-link hide" href="#top">To Top</a>
-<a name="top"></a>
 <br>
 
 <a id="section_02"></a>
