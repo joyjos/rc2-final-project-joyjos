@@ -3,7 +3,7 @@
 
 ![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/JOYSWEETS.png)
 
-<a name="top" style="display:flex; justify-content:end"></a>
+<a name="top"></a>
 # JOY SWEETS :: Dulces Emociones
 
 **JOY SWEETS** es una deliciosa colección de recetas dulces.
@@ -66,8 +66,9 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
     You can download it from [Node.js's website](https://nodejs.org/en/download/)  
 - Having PostgreSQL DataBase installed  
     Install PostgreSQL from [PostgreSQL's website](https://www.postgresql.org/download/)
-
-  <br>
+  
+<a class="top-link hide" href="#top">To Top</a>
+<br>
 
 <a id="section_03"></a>
 ## *03 Installation*
@@ -106,3 +107,4 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
   npm run dev
   ~~~
 
+<a class="top-link hide" href="#top">To Top</a>
