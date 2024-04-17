@@ -126,3 +126,15 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
 ### Home
 
 ![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/home.png)
+
+### Blog
+
+![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/blog.png)
+
+### Login
+
+![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/login.png)
+
+### Register
+
+![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/register.png)
