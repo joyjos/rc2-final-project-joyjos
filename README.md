@@ -22,6 +22,7 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 -  [*01 Languages and Technologie*s](#section_01)
 -  [*02 Requirements*](#section_02)
 -  [*03 Installation*](#section_03)
+-  [*04 Endpoints*](#section_04)
   
 <br>
 
@@ -100,6 +101,7 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
   ~~~
   npm install
   ~~~
+
 - Run the React application:
   
   ~~~
@@ -107,3 +109,14 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
   ~~~
 
 <a class="top-link hide" href="#top">To Top</a>
+
+<br>
+
+<a id="section_03"></a>
+## *04 Endpoints*
+
+![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/Post_enpoint.png)
+
+![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/User_enpoint.png)
+
+![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/Login_enpoint.png)
