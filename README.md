@@ -15,14 +15,14 @@ Desde pasteles, tartas, galletas y mucho más, en mi aplicación encontrarás re
 Además, cada receta viene acompañada de pasos detallados, para que puedas seguirlas fácilmente y obtener los mejores resultados.
 
 ¡Te espero en **JOY SWEETS**!
-<a name="top"></a>
+
 # A RESTful API built with Spring Boot consumed by a FrontEnd built in React
 
 ## Table of Content
 -  [*01 Languages and Technologie*s](#section_01)
 -  [*02 Requirements*](#section_02)
 -  [*03 Installation*](#section_03)
--  [*04 Endpoints*](#section_04)
+-  [*04 API Endpoints*](#section_04)
   
 <br>
 
@@ -55,7 +55,6 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
 
-<a class="top-link hide" href="#top">To Top</a>
 <br>
 
 <a id="section_02"></a>
@@ -67,7 +66,6 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 - Having PostgreSQL DataBase installed  
     Install PostgreSQL from [PostgreSQL's website](https://www.postgresql.org/download/)
   
-<a class="top-link hide" href="#top">To Top</a>
 <br>
 
 <a id="section_03"></a>
@@ -108,12 +106,10 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
   npm run dev
   ~~~
 
-<a class="top-link hide" href="#top">To Top</a>
-
 <br>
 
 <a id="section_04"></a>
-## *04 Endpoints*
+## *04 API Endpoints*
 
 ![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/Post_endpoints.png)
 
