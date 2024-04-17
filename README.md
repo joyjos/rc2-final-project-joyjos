@@ -112,11 +112,11 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
 
 <br>
 
-<a id="section_03"></a>
+<a id="section_04"></a>
 ## *04 Endpoints*
 
-![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/Post_enpoint.png)
+![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/Post_endpoints.png)
 
-![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/User_enpoint.png)
+![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/User_endpoints.png)
 
-![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/Login_enpoint.png)
+![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/Login_endpoint.png)
