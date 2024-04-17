@@ -3,7 +3,7 @@
 
 ![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/JOYSWEETS.png)
 
-
+<a name="top" style="display:flex; justify-content:end"></a>
 # JOY SWEETS :: Dulces Emociones
 
 **JOY SWEETS** es una deliciosa colección de recetas dulces.
@@ -26,7 +26,7 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 <br>
 
 <a id="section_01"></a>
-## *01 Languages and Technologies*
+## <span style="color:red">*01 Languages and Technologies*</span>
 ### FrontEnd
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
@@ -54,7 +54,7 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white)
 
-<a class="top-link hide" href="#top">↑</a>
+<a class="top-link hide" href="#top">To Top</a>
 <a name="top"></a>
 <br>
 
