@@ -35,7 +35,6 @@ export const Register = () => {
 
     try {
       const createdUser = await createUser(userData);
-      console.log('Usuario creado:', createdUser);
       navigate("/admin/");
       Swal.fire({
         title: "¡Usuario creado!",
@@ -54,7 +53,7 @@ export const Register = () => {
   return (
     <main className="admin-register animated fadeIn">
       <div className="admin-container">
-        <img src={logo} width="70" height="70" alt="JOYSWEETS" />
+        <Link to="/"><img src={logo} width="70" height="70" alt="JOYSWEETS" /></Link>
         <h1>Inscribirse</h1>
         <form onSubmit={handleCreateUser}>
           <div className="p-float-label">

@@ -24,7 +24,7 @@ export const Login = () => {
   return (
     <main className="admin-login animated fadeIn">
       <div className="admin-container">
-        <img src={logo} width="70" height="70" alt="JOYSWEETS" />
+        <Link to="/"><img src={logo} width="70" height="70" alt="JOYSWEETS" /></Link>
         <h1>Iniciar sesión</h1>
         <form onSubmit={handleSubmit}>
           <div className="p-float-label">
