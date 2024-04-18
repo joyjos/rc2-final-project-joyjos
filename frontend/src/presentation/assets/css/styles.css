@@ -452,3 +452,18 @@ input[type="password"]:focus {
   padding: 0 !important;
   background: none !important;
 }
+
+@media (max-width: 742px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .legal {
+    display: flex;
+    align-items: center !important;
+    margin-top: 2rem;
+    text-align: center;
+  }
+}
