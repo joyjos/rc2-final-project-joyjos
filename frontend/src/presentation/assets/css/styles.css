@@ -81,7 +81,6 @@
 
 .img-200 {
   height: 200px;
-  border-radius: var(--bs-border-radius);
 }
 
 .img-thumbnail {
