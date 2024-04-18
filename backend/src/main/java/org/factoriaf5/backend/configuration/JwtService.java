@@ -20,7 +20,7 @@ public class JwtService {
     public static final String SECRET = "357638792F423F4428472B4B6250655368566D597133743677397A2443264629";
 
     public String extractUsername(String token) {
-        return extractClaim(token, Claims::getSubject);
+        return extractClaim(token, Claims::getSubject).toLowerCase();
     }
 
     public Date extractExpiration(String token) {
@@ -46,22 +46,19 @@ public class JwtService {
     }
 
     public Boolean validateToken(String token, UserDetails userDetails) {
-        final String username = extractUsername(token);
-        return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
+        final String email = extractUsername(token);
+        return (email.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 
-
-    public String generateToken(String username) {
+    public String generateToken(String email) {
         Map<String, Object> claims = new HashMap<>();
-        return createToken(claims, username);
+        return createToken(claims, email);
     }
 
-
-    private String createToken(Map<String, Object> claims, String username) {
-
+    private String createToken(Map<String, Object> claims, String email) {
         return Jwts.builder()
                 .setClaims(claims)
-                .setSubject(username)
+                .setSubject(email)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + 1000000 * 60 * 1))
                 .signWith(getSignKey(), SignatureAlgorithm.HS256).compact();

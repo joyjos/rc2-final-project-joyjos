@@ -23,14 +23,13 @@ public class RefreshTokenService {
         this.userRepository = userRepository;
     }
 
-    public RefreshToken createRefreshToken(String username) {
+    public RefreshToken createRefreshToken(String email) {
         RefreshToken refreshToken = new RefreshToken();
-        refreshToken.setUserInfo(userRepository.findByEmail(username));
+        refreshToken.setUserInfo(userRepository.findByEmail(email));
         refreshToken.setToken(UUID.randomUUID().toString());
         refreshToken.setExpiryDate(Instant.now().plusMillis(600000000));
         return refreshTokenRepository.save(refreshToken);
     }
-
 
     public Optional<RefreshToken> findByToken(String token) {
         return refreshTokenRepository.findByToken(token);

@@ -48,6 +48,14 @@ public class UserService {
         return Optional.empty();
     }
 
+    public Optional<UserResponse> getUserByEmail(String email) {
+        User user = userRepository.findByEmail(email);
+        if (user != null) {
+            return Optional.of(new UserResponse(user.getId(), user.getFirstName(), user.getLastName(), user.getEmail()));
+        }
+        return Optional.empty();
+    }
+
     public User createUser(UserRequest userRequest) {
         User user = new User();
         user.setFirstName(userRequest.getFirstName());
@@ -67,4 +75,6 @@ public class UserService {
 
         return userRepository.save(user);
     }
+
+    
 }
