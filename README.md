@@ -23,7 +23,7 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 -  [*02 Requirements*](#section_02)
 -  [*03 Installation*](#section_03)
 -  [*04 API Endpoints*](#section_04)
--  [*05 Screen Shots*](#section_05)
+-  [*05 Screenshots*](#section_05)
   
 <br>
 
@@ -121,7 +121,7 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
 <br>
 
 <a id="section_05"></a>
-## *05 Screen Shots*
+## *05 Screenshots*
 
 ### Home
 
