@@ -16,7 +16,7 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 
 ¡Te espero en **JOY SWEETS**!
 
-# A RESTful API built with Spring Boot consumed by a FrontEnd built in React
+# A RESTful API built with Spring Boot consumed by a FrontEnd built in React. JWT Authentication y PostgreSQL
 
 ## Table of Content
 -  [*01 Languages and Technologie*s](#section_01)
@@ -138,3 +138,15 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
 ### Register
 
 ![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/register.png)
+
+### Dashboard
+
+![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/dashboard.png)
+
+### Posts
+
+![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/posts.png)
+
+### Edit posts
+
+![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/updatePost.png)
