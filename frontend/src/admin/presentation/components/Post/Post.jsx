@@ -48,29 +48,6 @@ export const Post = () => {
     }));
   };
 
-  // const handleImageChange = (event) => {
-  //   setFormData((prevData) => ({
-  //     ...prevData,
-  //     image: event.target.files[0],
-  //   }));
-  // };
-
-  // const handleImageChange = (event) => {
-  //   const file = event.target.files[0];
-  //   const allowedTypes = ["image/jpeg", "image/png", "image/gif"];
-
-  //   if (file && allowedTypes.includes(file.type)) {
-  //     setFormData((prevData) => ({
-  //       ...prevData,
-  //       image: file,
-  //     }));
-  //   } else {
-  //     // Mostrar un mensaje de error al usuario indicando que solo se permiten ciertos tipos de archivos
-  //     alert("Por favor, selecciona una imagen válida (JPEG, PNG, GIF)");
-  //     // O puedes mostrar un mensaje de error en algún lugar de la interfaz de usuario
-  //   }
-  // };
-
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({
@@ -198,9 +175,11 @@ export const Post = () => {
                       />
                     </div>
                     <div className="form-group flexar">
-                      <label for="file-input" className="custom-file-upload">Cambiar foto</label>
+                      <label for="file-input" className="custom-file-upload">
+                        Cambiar foto
+                      </label>
                       <input
-                      id="file-input"
+                        id="file-input"
                         type="file"
                         name="file"
                         onChange={handleImageChange}
@@ -212,7 +191,12 @@ export const Post = () => {
                             alt="Imagen seleccionada"
                             style={{ maxWidth: "100px" }}
                           />
-                          <button className="btn-delete-upload" onClick={handleImageRemove}>Eliminar</button>
+                          <button
+                            className="btn-delete-upload"
+                            onClick={handleImageRemove}
+                          >
+                            Eliminar
+                          </button>
                         </div>
                       )}
                     </div>

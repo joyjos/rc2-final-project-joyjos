@@ -443,3 +443,12 @@ input[type="file"] {
   margin-left: 30rem;
   opacity: 0.8;
 }
+
+.p-inputtext:enabled:focus {
+  box-shadow: none !important;
+}
+
+input[type="password"]:focus {
+  padding: 0 !important;
+  background: none !important;
+}

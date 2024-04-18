@@ -61,6 +61,7 @@ export const Register = () => {
               id="firstName"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
+              required
             />
             <label htmlFor="email">Nombre</label>
           </div>
@@ -69,6 +70,7 @@ export const Register = () => {
               id="lastName"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
+              required
             />
             <label htmlFor="email">Apellidos</label>
           </div>
@@ -77,6 +79,7 @@ export const Register = () => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <label htmlFor="email">Email</label>
           </div>
@@ -87,6 +90,7 @@ export const Register = () => {
               feedback={false}
               toggleMask
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
             <label htmlFor="email">Contraseña</label>
           </div>
@@ -95,6 +99,7 @@ export const Register = () => {
               inputId="accept"
               checked={accept}
               onChange={(e) => setAccept(e.checked)}
+              required
             />
             <label htmlFor="accept">
               Estoy de acuerdo con los Términos y Condiciones
