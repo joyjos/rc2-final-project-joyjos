@@ -10,6 +10,8 @@ import org.factoriaf5.backend.persistence.users.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+
 @Service
 public class RefreshTokenService {
     private final RefreshTokenRepository refreshTokenRepository;
@@ -24,11 +26,21 @@ public class RefreshTokenService {
     }
 
     public RefreshToken createRefreshToken(String email) {
-        RefreshToken refreshToken = new RefreshToken();
-        refreshToken.setUserInfo(userRepository.findByEmail(email));
-        refreshToken.setToken(UUID.randomUUID().toString());
-        refreshToken.setExpiryDate(Instant.now().plusMillis(600000000));
-        return refreshTokenRepository.save(refreshToken);
+        // Verificar si ya existe un token de actualización para el usuario
+        Optional<RefreshToken> existingToken = refreshTokenRepository.findByEmail(email);
+
+        if (existingToken.isPresent()) {
+            RefreshToken refreshToken = existingToken.get();
+            refreshToken.setToken(UUID.randomUUID().toString());
+            refreshToken.setExpiryDate(Instant.now().plusMillis(600000000));
+            return refreshTokenRepository.save(refreshToken);
+        } else {
+            RefreshToken newRefreshToken = new RefreshToken();
+            newRefreshToken.setUserInfo(userRepository.findByEmail(email));
+            newRefreshToken.setToken(UUID.randomUUID().toString());
+            newRefreshToken.setExpiryDate(Instant.now().plusMillis(600000000));
+            return refreshTokenRepository.save(newRefreshToken);
+        }
     }
 
     public Optional<RefreshToken> findByToken(String token) {
@@ -43,4 +55,15 @@ public class RefreshTokenService {
         return token;
 
     }
+
+    public void deleteRefreshToken(String token) {
+        Optional<RefreshToken> refreshTokenOptional = refreshTokenRepository.findByToken(token);
+        if (refreshTokenOptional.isPresent()) {
+            RefreshToken refreshToken = refreshTokenOptional.get();
+            refreshTokenRepository.delete(refreshToken);
+        } else {
+            throw new NotFoundException("Refresh token not found with token: " + token);
+        }
+    }
+
 }
