@@ -10,7 +10,7 @@
 
 En mi aplicación, encontrarás una gran variedad de recetas que he creado con mucho amor y dedicación, para que puedas disfrutar de deliciosos postres en la comodidad de tu hogar.
 
-Desde pasteles, tartas, galletas y mucho más, en mi aplicación encontrarás recetas fáciles de seguir y con ingredientes accesibles, para que puedas prepararlas en cualquier momento.
+Desde pasteles, tartas, galletas y mucho más, encontrarás recetas fáciles de seguir y con ingredientes accesibles, para que puedas prepararlas en cualquier momento.
 
 Además, cada receta viene acompañada de pasos detallados, para que puedas seguirlas fácilmente y obtener los mejores resultados.
 
