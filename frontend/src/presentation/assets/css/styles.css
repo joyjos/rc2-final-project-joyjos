@@ -423,7 +423,7 @@ input[type="file"] {
 }
 
 .btn-delete-upload:hover {
-  color:var(--chocolate)
+  color: var(--chocolate);
 }
 
 .flexar {
@@ -451,6 +451,12 @@ input[type="file"] {
 input[type="password"]:focus {
   padding: 0 !important;
   background: none !important;
+}
+
+@media (max-width: 1024px) {
+  .rk-logo {
+    margin-left: 0 !important;
+  }
 }
 
 @media (max-width: 742px) {
