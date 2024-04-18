@@ -24,6 +24,7 @@
   --point: #ffc803;
   --special: #f7afbe;
   --light-special: #f5e2e6;
+  --fecha: #e4d6d9;
   --input: #f9f2f4;
   --white: #fff;
 }
@@ -432,4 +433,13 @@ input[type="file"] {
 
 .guardar {
   margin: 2rem 0;
+}
+
+/* Fecha recetas */
+
+.fecha {
+  background-color: var(--light-special);
+  width: 10rem;
+  margin-left: 30rem;
+  opacity: 0.8;
 }

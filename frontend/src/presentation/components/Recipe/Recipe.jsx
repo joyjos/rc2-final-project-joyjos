@@ -37,7 +37,7 @@ export const Recipe = () => {
             <p className="ae-theta rk-portfolio-category">
               <span className="bgCategory ae-u-bolder">{selectedPost.category}</span>
             </p>
-            <p className="ae-kappa ae-u-bold rk-portfolio-inner-date">
+            <p className="ae-kappa ae-u-bold rk-portfolio-inner-date fecha">
               {formatDate(selectedPost.datePost)}
             </p>
           </div>
