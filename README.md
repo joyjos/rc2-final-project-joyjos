@@ -117,7 +117,6 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
 src
 ├── admin
 │   ├── middleware
-│   │   ├── context
 │   │   └── router
 │   └── presentation
 │       ├── components
