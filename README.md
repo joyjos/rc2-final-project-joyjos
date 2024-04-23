@@ -16,7 +16,7 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 
 ¡Te espero en **JOY SWEETS**!
 
-# A RESTful API built with Spring Boot consumed by a FrontEnd built in React. JWT Authentication y PostgreSQL
+# A RESTful API built with Spring Boot consumed by a FrontEnd built in React. JWT Authentication and PostgreSQL
 
 ## Table of Content
 -  [*01 Languages and Technologie*s](#section_01)
