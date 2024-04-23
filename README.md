@@ -22,8 +22,9 @@ Además, cada receta viene acompañada de pasos detallados, para que puedas segu
 -  [*01 Languages and Technologie*s](#section_01)
 -  [*02 Requirements*](#section_02)
 -  [*03 Installation*](#section_03)
--  [*04 API Endpoints*](#section_04)
--  [*05 Screenshots*](#section_05)
+-  [*04 Architecture*](#section_04)
+-  [*05 API Endpoints*](#section_05)
+-  [*06 Screenshots*](#section_06)
   
 <br>
 
@@ -110,7 +111,72 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
 <br>
 
 <a id="section_04"></a>
-## *04 API Endpoints*
+## *04 Architecture*
+### FrontEnd Folder Structure
+~~~
+src  
+├── admin  
+│   ├── middleware  
+│   │   └── router  
+│   └── presentation  
+│       ├── components  
+│       │   ├── Dashboard  
+│       │   ├── Editor  
+│       │   ├── Header  
+│       │   ├── Login  
+│       │   ├── NewPost  
+│       │   ├── Post  
+│       │   ├── Posts  
+│       │   ├── Register  
+│       │   └── Sidebar  
+│       └── pages  
+│           ├── login  
+│           └── register  
+├── helpers  
+├── middleware  
+│   ├── context  
+│   └── router  
+├── presentation  
+│   ├── assets  
+│   │   ├── css  
+│   │   ├── fonts  
+│   │   ├── img  
+│   │   └── js  
+│   ├── components  
+│   │   ├── Blog  
+│   │   ├── Footer  
+│   │   ├── Header  
+│   │   ├── Recipe  
+│   │   ├── Recipes  
+│   │   └── Searcher  
+│   └── pages  
+└── services    
+~~~
+
+### BackEnd Folder Structure
+~~~
+src
+└── main
+    └── java
+        └── org
+            └── factoriaf5
+                └── backend
+                    ├── configuration
+                    ├── controllers
+                    │   ├── auth
+                    │   ├── posts
+                    │   └── upload
+                    ├── persistence
+                    │   ├── auth
+                    │   └── posts
+                    └── services
+                        └── auth
+~~~
+
+<br>
+
+<a id="section_05"></a>
+## *05 API Endpoints*
 
 ![JOY SWEETS](https://github.com/FactoriaF5Code/rc2-final-project-joyjos/blob/main/images/Post_endpoints.png)
 
@@ -120,8 +186,8 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
 
 <br>
 
-<a id="section_05"></a>
-## *05 Screenshots*
+<a id="section_06"></a>
+## *06 Screenshots*
 
 ### Home
 
