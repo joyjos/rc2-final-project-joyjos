@@ -114,42 +114,43 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
 ## *04 Architecture*
 ### FrontEnd Folder Structure
 ~~~
-src  
-├── admin  
-│   ├── middleware  
-│   │   └── router  
-│   └── presentation  
-│       ├── components  
-│       │   ├── Dashboard  
-│       │   ├── Editor  
-│       │   ├── Header  
-│       │   ├── Login  
-│       │   ├── NewPost  
-│       │   ├── Post  
-│       │   ├── Posts  
-│       │   ├── Register  
-│       │   └── Sidebar  
-│       └── pages  
-│           ├── login  
-│           └── register  
-├── helpers  
-├── middleware  
-│   ├── context  
-│   └── router  
-├── presentation  
-│   ├── assets  
-│   │   ├── css  
-│   │   ├── fonts  
-│   │   ├── img  
-│   │   └── js  
-│   ├── components  
-│   │   ├── Blog  
-│   │   ├── Footer  
-│   │   ├── Header  
-│   │   ├── Recipe  
-│   │   ├── Recipes  
-│   │   └── Searcher  
-│   └── pages  
+src
+├── admin
+│   ├── middleware
+│   │   ├── context
+│   │   └── router
+│   └── presentation
+│       ├── components
+│       │   ├── Dashboard
+│       │   ├── Editor
+│       │   ├── Header
+│       │   ├── Login
+│       │   ├── NewPost
+│       │   ├── Post
+│       │   ├── Posts
+│       │   ├── Register
+│       │   └── Sidebar
+│       └── pages
+│           ├── login
+│           └── register
+├── helpers
+├── middleware
+│   ├── context
+│   └── router
+├── presentation
+│   ├── assets
+│   │   ├── css
+│   │   ├── fonts
+│   │   ├── img
+│   │   └── js
+│   ├── components
+│   │   ├── Blog
+│   │   ├── Footer
+│   │   ├── Header
+│   │   ├── Recipe
+│   │   ├── Recipes
+│   │   └── Searcher
+│   └── pages
 └── services    
 ~~~
 
