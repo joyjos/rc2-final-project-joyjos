@@ -113,7 +113,7 @@ A PostgreSQL database is needed, according to the configuration of `src/main/res
 <a id="section_04"></a>
 ## *04 Architecture*
 ### FrontEnd Folder Structure
-~~~
+<pre>
 src
 ├── admin
 │   ├── middleware
@@ -151,10 +151,10 @@ src
 │   │   └── Searcher
 │   └── pages
 └── services    
-~~~
+</pre>
 
 ### BackEnd Folder Structure
-~~~
+<pre>
 src
 └── main
     └── java
@@ -171,7 +171,7 @@ src
                     │   └── posts
                     └── services
                         └── auth
-~~~
+</pre>
 
 <br>
 
