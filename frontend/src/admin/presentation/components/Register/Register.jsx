@@ -54,7 +54,7 @@ export const Register = () => {
     <main className="admin-register animated fadeIn">
       <div className="admin-container">
         <Link to="/"><img src={logo} width="70" height="70" alt="JOYSWEETS" /></Link>
-        <h1>Inscribirse</h1>
+        <h1>Regístrate</h1>
         <form onSubmit={handleCreateUser}>
           <div className="p-float-label">
             <InputText
@@ -63,7 +63,7 @@ export const Register = () => {
               onChange={(e) => setFirstName(e.target.value)}
               required
             />
-            <label htmlFor="email">Nombre</label>
+            <label htmlFor="firstName">Nombre</label>
           </div>
           <div className="p-float-label">
             <InputText
@@ -72,7 +72,7 @@ export const Register = () => {
               onChange={(e) => setLastName(e.target.value)}
               required
             />
-            <label htmlFor="email">Apellidos</label>
+            <label htmlFor="lastName">Apellidos</label>
           </div>
           <div className="p-float-label">
             <InputText
@@ -92,7 +92,7 @@ export const Register = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-            <label htmlFor="email">Contraseña</label>
+            <label htmlFor="password">Contraseña</label>
           </div>
           <div className="p-field-checkbox">
             <Checkbox
@@ -102,12 +102,12 @@ export const Register = () => {
               required
             />
             <label htmlFor="accept">
-              Estoy de acuerdo con los Términos y Condiciones
+              <Link to="/privacidad" target="_blank" className="accept">Estoy de acuerdo con los Términos y Condiciones</Link>
             </label>
           </div>
-          <Button type="submit" label="INSCRIBIRSE" />
+          <Button type="submit" label="REGÍSTRATE" />
           <div className="remember-container">
-            <Link to="/admin">¿Ya tienes cuenta? Regístrate</Link>
+            ¿Ya tienes cuenta?<Link to="/admin" className="accept">Entra</Link>
           </div>
         </form>
         <div className="footer-admin">

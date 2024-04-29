@@ -7,6 +7,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const authService = new AuthService();
 
@@ -34,28 +35,19 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem('refreshToken', token);
       setUser(email);
       setIsAuthenticated(true);
+      setError(null);
     } catch (error) {
+      setError('Credenciales incorrectas. Por favor, inténtalo de nuevo.');
       console.error(error);
     }
   };
-
-  // const logout = async () => {
-  //   try {
-  //     await authService.logout(localStorage.getItem('refreshToken'));
-  //     localStorage.removeItem('refreshToken');
-  //     setUser(null);
-  //     setIsAuthenticated(false);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
 
   const logout = async () => {
     localStorage.removeItem('refreshToken');
   }
 
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, isLoading, login, logout }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, isLoading, error, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

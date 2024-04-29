@@ -472,3 +472,69 @@ input[type="password"]:focus {
     text-align: center;
   }
 }
+
+/* Menú hamburguesa */
+.mobile-menu-icon {
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+#mobile-menu {
+  display: none;
+}
+
+#mobile-menu:checked + .mobile-menu-icon .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+#mobile-menu:checked + .mobile-menu-icon .bar:nth-child(2) {
+  opacity: 0;
+}
+
+#mobile-menu:checked + .mobile-menu-icon .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+#mobile-menu:checked ~ .rk-topbar .rk-menu__link {
+  padding-bottom: 0 !important;
+}
+
+#mobile-menu:checked ~ .rk-topbar .rk-menu__item {
+  padding-bottom: 1rem;
+}
+
+.rk-mobile-menu + label {
+  width: 25px;
+  height: 33px;
+}
+
+/* Checkbox Términos y Condiciones */
+
+.remember-container {
+  justify-content: center !important;
+  gap: 1rem;
+}
+
+.p-checkbox:not(.p-disabled):has(.p-checkbox-input:focus-visible) .p-checkbox-box {
+  border-color: var(--special);
+}
+
+.p-checkbox:not(.p-disabled):has(.p-checkbox-input:hover) .p-checkbox-box {
+  border-color: var(--special);
+}
+
+.accept {
+  color: var(--special) !important;
+}
+
+.accept:hover {
+  color: #a0a0a0 !important;
+}

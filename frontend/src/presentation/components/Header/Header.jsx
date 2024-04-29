@@ -3,35 +3,19 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/img/JOYSWEETS.svg";
 import { RiUserSmileFill } from "react-icons/ri";
+import { HamburgerMenu } from "../HamburguerMenu/HamburgerMenu";
 
 export const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
   const location = useLocation();
 
-  const toggleMobileMenu = () => {
-    setMobileMenuOpen(!mobileMenuOpen);
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
   };
 
   return (
     <header className="ae-container-fluid ae-container-fluid--full rk-header animated fadeIn">
-      <input
-        type="checkbox"
-        id="mobile-menu"
-        className="rk-mobile-menu"
-        checked={mobileMenuOpen}
-        onChange={toggleMobileMenu}
-      />
-      <label htmlFor="mobile-menu" onClick={toggleMobileMenu}>
-        <svg>
-          <use xlinkHref="assets/img/symbols.svg#bar"></use>
-        </svg>
-        <svg>
-          <use xlinkHref="assets/img/symbols.svg#bar"></use>
-        </svg>
-        <svg>
-          <use xlinkHref="assets/img/symbols.svg#bar"></use>
-        </svg>
-      </label>
+      <HamburgerMenu closeMobileMenu={closeMobileMenu} />
       <div className="ae-container-fluid rk-topbar">
         <h1 className="rk-logo">
           <Link to="/">
@@ -46,6 +30,7 @@ export const Header = () => {
                 className={`rk-menu__link ${
                   location.pathname === "/" ? "active" : ""
                 }`}
+                onClick={closeMobileMenu}
               >
                 Home
               </Link>
@@ -56,6 +41,7 @@ export const Header = () => {
                 className={`rk-menu__link ${
                   location.pathname.startsWith("/blog") ? "active" : ""
                 }`}
+                onClick={closeMobileMenu}
               >
                 Blog
               </Link>

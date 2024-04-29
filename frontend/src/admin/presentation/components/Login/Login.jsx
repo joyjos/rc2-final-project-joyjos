@@ -12,7 +12,8 @@ import Swal from "sweetalert2";
 const fechaActual = new Date().getFullYear();
 
 export const Login = () => {
-  const { user, login } = useContext(AuthContext);
+  const { user, login, isAuthenticated, isLoading, error } =
+    useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
@@ -21,32 +22,47 @@ export const Login = () => {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    console.log("Recordar sesión:", rememberMe);
-
+  
     try {
-    await login(email, password);
-
-    Swal.fire({
-      title: "¡Bienvenido!",
-      text:"Has iniciado sesión",
-      icon: "success",
-      confirmButtonText: "Cerrar",
-    });
-
-    navigate("/admin/dashboard");
-  } catch (error) {
-    console.error(error);
-
-    Swal.fire({
-      title: "Error",
-      text: "Ha ocurrido un error al iniciar sesión. Por favor, intenta nuevamente.",
-      icon: "error",
-      confirmButtonText: "Cerrar",
-    });
-  }
-}
+      await login(email, password);
+  
+      if (isAuthenticated && !isLoading) {
+        Swal.fire({
+          title: "¡Bienvenido!",
+          text: "Has iniciado sesión",
+          icon: "success",
+          confirmButtonText: "Cerrar",
+        });
+  
+        navigate("/admin/dashboard");
+      } else {
+        Swal.fire({
+          title: "Error",
+          text: "Ha ocurrido un error al iniciar sesión. Por favor, intenta nuevamente.",
+          icon: "error",
+          confirmButtonText: "Cerrar",
+        });
+      }
+    } catch (error) {
+      console.error(error);
+  
+      if (error.response && error.response.status === 401) {
+        Swal.fire({
+          title: "Error",
+          text: "Credenciales incorrectas. Por favor, inténtalo de nuevo.",
+          icon: "error",
+          confirmButtonText: "Cerrar",
+        });
+      } else {
+        Swal.fire({
+          title: "Error",
+          text: "Ha ocurrido un error al iniciar sesión. Por favor, intenta nuevamente.",
+          icon: "error",
+          confirmButtonText: "Cerrar",
+        });
+      }
+    }
+  };
 
   return (
     <main className="admin-login animated fadeIn">
@@ -54,7 +70,7 @@ export const Login = () => {
         <Link to="/">
           <img src={logo} width="70" height="70" alt="JOYSWEETS" />
         </Link>
-        <h1>Iniciar sesión</h1>
+        <h1>Inicia sesión</h1>
         <form onSubmit={handleLogin}>
           <div className="p-float-label">
             <InputText
@@ -86,10 +102,12 @@ export const Login = () => {
             />
             <label htmlFor="rememberMe">Recuérdame</label>
           </div>
-          <Button type="submit" label="INICIAR SESIÓN" />
+          <Button type="submit" label="INICIA SESIÓN" />
           <div className="remember-container">
-            ¿Olvidaste tu contraseña?
-            <Link to="/admin/register">¿No tienes una cuenta? Inscríbete</Link>
+            ¿No tienes una cuenta?
+            <Link to="/admin/register" className="accept">
+              Regístrate
+            </Link>
           </div>
         </form>
         <div className="footer-admin">&copy; JOYSWEETS {fechaActual}</div>
