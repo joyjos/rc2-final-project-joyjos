@@ -439,7 +439,7 @@ input[type="file"] {
 .fecha {
   background-color: var(--light-special);
   width: 10rem;
-  margin-left: 30rem;
+  margin: 0 auto;
   opacity: 0.8;
 }
 
